@@ -44,7 +44,9 @@ window.onscroll = toggleElementsOnScroll;
         (:div
          "Twitter: "(:a (@ :href "https://twitter.com/tonyaldon") "@tonyaldon")
          " | "
-         "Email: " (:a (@ :href "mailto:tony@tonyaldon.com") "tony@tonyaldon.com"))
+         "Email: " (:a (@ :href "mailto:tony@tonyaldon.com") "tony@tonyaldon.com")
+         " | "
+         "RSS: " (:a (@ :href "/feed.xml") "feed.xml"))
         (:div "© 2023 Tony Aldon.  All rights reserved.")))
 
 (defun minibuffer-item (page &optional is-episode-p)
@@ -155,3 +157,33 @@ window.onscroll = toggleElementsOnScroll;
                       pages)))))
          ,minibuffer-footer)
         (:script ,minibuffer-js-onscroll))))))
+
+;;; feed.xml
+
+(defun posts-feed (pages tree global)
+  "Produce file ./public/feed.xml"
+  (with-temp-file "./public/feed.xml"
+    (insert
+     (jack-html
+      "<?xml version=\"1.0\" encoding=\"utf-8\"?>"
+      `(:feed (@ :xmlns "http://www.w3.org/2005/Atom")
+        (:title "minibuffer")
+        (:link (@ :href "https://minibuffer.tonyaldon.com"))
+        (:id "urn:minibuffer-tonyaldon-com:feed")
+        (:updated "2023-08-28T00:00:00Z")
+        (:author (:name "Tony Aldon"))
+        ,(mapcar
+          (lambda (page)
+            (let* ((title (plist-get page :one-title))
+                   (path (plist-get page :one-path))
+                   (link (concat "https://posts.tonyaldon.com" path)))
+              (when (not (string= path "/"))
+                (let ((date (substring path 1 11)))
+                  `(:entry
+                    (:title ,title)
+                    (:link (@ :href ,link))
+                    (:id ,(concat "urn:minibuffer-tonyaldon-com:" date))
+                    (:updated ,(concat date "T00:00:00Z")))))))
+          pages))))))
+
+(add-hook 'one-hook 'posts-feed)
