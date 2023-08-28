@@ -1,0 +1,48 @@
+* Dev
+** one.el
+
+#+BEGIN_SRC emacs-lisp
+(add-hook 'after-save-hook
+          (lambda ()
+            (when (equal (buffer-file-name)
+                         "/media/youtube/youtube/minibuffer.tonyaldon.com/minibuffer.org")
+              (one-render-page-at-point-async))))
+#+END_SRC
+
+** browser-sync
+
+I'm using [[https://www.browser-sync.io/][browser-sync]] to get hot reload when coding.
+
+Then, to start a server that automatically reload when files change on
+the system, run the command:
+
+#+BEGIN_SRC tms
+$ cd public
+$ browser-sync start -s -w --files "*"
+#+END_SRC
+
+If it doesn't work, add just before the closing ~</body>~ tag of
+[[file:index.html][/public/index.html]] file the snippet printed by the command
+~browser-sync start~.  Then rerun the commands above.
+
+** lighthouse
+
+I'm using [[https://developers.google.com/web/tools/lighthouse/][lighthouse]] to improve the quality of the webpage.
+
+You can install the command line ~lighthouse~ by running the following
+command:
+
+#+BEGIN_SRC tms
+$ sudo npm install -g lighthouse
+#+END_SRC
+
+When using ~brower-sync~ as describe in the previous section, the web
+page is served at ~localhost~ on port ~3000~.  So to get the quality
+report of the web page given by ~lighthouse~, you just have to run the
+following command:
+
+#+BEGIN_SRC tms
+$ lighthouse http://localhost:3000 --view
+#+END_SRC
+
+Then you can read the report in your browser.

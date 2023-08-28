@@ -1,0 +1,112 @@
+* minibuffer
+:PROPERTIES:
+:ONE: minibuffer-one-home
+:CUSTOM_ID: /
+:MINIBUFFER_CREATED_AT: [2022-11-22 Tue]
+:END:
+* How to match 47 characters in a string with Emacs Lisp?
+:PROPERTIES:
+:ONE: minibuffer-one-episode
+:CUSTOM_ID: /2023-08-22-how-to-match-47-characters-in-a-string-with-emacs-lisp/
+:MINIBUFFER_CREATED_AT: [2023-08-28 Mon]
+:MINIBUFFER_YOUTUBE_LINK: https://www.youtube.com/watch?v=xfIuFNpfYWI
+:END:
+
+#+BEGIN_SRC emacs-lisp
+(setq
+ link
+ "[[abbrv:assets/archive/2023-08-09_9c6b04b4-0076-44d0-a241-063a2d899544_2023-08-22T17:43:44+0200.html]]")
+
+(progn
+  (string-match "archive/\\(.\\{47\\}\\)" link)
+  (match-string 1 link))
+#+END_SRC
+
+* How to put the value of an Org property in the kill-ring?
+:PROPERTIES:
+:ONE: minibuffer-one-episode
+:CUSTOM_ID: /2023-08-23-how-to-put-the-value-of-an-org-property-in-the-kill-ring/
+:MINIBUFFER_CREATED_AT: [2023-08-28 Mon]
+:MINIBUFFER_YOUTUBE_LINK: https://www.youtube.com/watch?v=WnjrpR1sUKM
+:END:
+
+#+BEGIN_SRC emacs-lisp
+(org-entry-get nil "foo")
+(kill-new (org-entry-get nil "foo"))
+(kill-new (concat (org-entry-get nil "foo") "-baz"))
+#+END_SRC
+
+* Do you know how to generate html strings with Emacs Lisp?
+:PROPERTIES:
+:ONE: minibuffer-one-episode
+:CUSTOM_ID: /2023-08-24-do-you-know-how-to-generate-html-strings-with-emacs-lisp/
+:MINIBUFFER_CREATED_AT: [2023-08-28 Mon]
+:MINIBUFFER_YOUTUBE_LINK: https://www.youtube.com/watch?v=Gn2HjXwHhHg
+:END:
+
+#+BEGIN_SRC emacs-lisp
+(require 'jack) ;; https://jack.tonyaldon.com
+
+(with-temp-file "index.html"
+  (insert
+   (jack-html
+    '(:ul
+      (:li "foo-0")
+      (:li "foo-1")
+      (:li "foo-2")))))
+
+;; need `prettier' utility installed - https://prettier.io
+(call-process-shell-command "prettier --write index.html" nil 0)
+#+END_SRC
+
+- https://jack.tonyaldon.com
+- https://prettier.io
+
+* How to add html attributes with the Emacs package Jack?
+:PROPERTIES:
+:ONE: minibuffer-one-episode
+:CUSTOM_ID: /2023-08-25-how-to-add-html-attributes-with-the-emacs-package-jack/
+:MINIBUFFER_CREATED_AT: [2023-08-28 Mon]
+:MINIBUFFER_YOUTUBE_LINK: https://www.youtube.com/watch?v=68NS_2afPw8
+:END:
+
+#+BEGIN_SRC emacs-lisp
+(require 'jack) ;; https://jack.tonyaldon.com
+
+(jack-html '(:div "foo")) ;; "<div>foo</div>"
+(jack-html '(:div (@ :id "myid" :class "myclass") "foo"))
+;; "<div id=\"myid\" class=\"myclass\">foo</div>"
+(jack-html '(:div/id.myclass1.myclass2 "foo"))
+;; "<div id=\"id\" class=\"myclass1 myclass2\">foo</div>"
+#+END_SRC
+
+- https://jack.tonyaldon.com
+
+* How to check for a regexp match after point with Emacs Lisp?
+:PROPERTIES:
+:ONE: minibuffer-one-episode
+:CUSTOM_ID: /2023-08-26-how-to-check-for-a-regexp-match-after-point-with-emacs-lisp/
+:MINIBUFFER_CREATED_AT: [2023-08-28 Mon]
+:MINIBUFFER_YOUTUBE_LINK: https://www.youtube.com/watch?v=cxpTi11pYXI
+:END:
+
+#+BEGIN_SRC emacs-lisp
+(looking-at "bar")
+(looking-at "foo")
+(when (looking-at "foo") (insert "---"))
+(when (looking-at "bar") (insert "---"))
+#+END_SRC
+
+* How to insert foo at the end of buffer without changing point with Emacs Lisp?
+:PROPERTIES:
+:ONE: minibuffer-one-episode
+:CUSTOM_ID: /2023-08-27-how-to-insert-foo-at-the-end-of-buffer-without-changing-point-with-emacs-lisp/
+:MINIBUFFER_CREATED_AT: [2023-08-28 Mon]
+:MINIBUFFER_YOUTUBE_LINK: https://www.youtube.com/watch?v=KA3cghsUVaM
+:END:
+
+#+BEGIN_SRC emacs-lisp
+(save-excursion
+  (goto-char (point-max))
+  (insert "foo"))
+#+END_SRC
