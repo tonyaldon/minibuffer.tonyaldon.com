@@ -110,3 +110,17 @@
   (goto-char (point-max))
   (insert "foo"))
 #+END_SRC
+* How to check for the states of buffer-local variables in Emacs Lisp?
+:PROPERTIES:
+:ONE: minibuffer-one-episode
+:CUSTOM_ID: /2023-08-28-how-to-check-for-the-states-of-buffer-local-variables-in-emacs-lisp/
+:MINIBUFFER_CREATED_AT: [2023-08-28 Mon]
+:MINIBUFFER_YOUTUBE_LINK: https://www.youtube.com/watch?v=HhGVR7xhXis
+:END:
+
+#+BEGIN_SRC emacs-lisp
+;; M-x pp-eval-expression
+(buffer-local-variables)
+;; major-mode
+;; buffer-read-only
+#+END_SRC
