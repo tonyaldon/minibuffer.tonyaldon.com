@@ -160,7 +160,7 @@ window.onscroll = toggleElementsOnScroll;
 
 ;;; feed.xml
 
-(defun posts-feed (pages tree global)
+(defun minibuffer-feed (pages tree global)
   "Produce file ./public/feed.xml"
   (with-temp-file "./public/feed.xml"
     (insert
@@ -176,7 +176,7 @@ window.onscroll = toggleElementsOnScroll;
           (lambda (page)
             (let* ((title (plist-get page :one-title))
                    (path (plist-get page :one-path))
-                   (link (concat "https://posts.tonyaldon.com" path)))
+                   (link (concat "https://minibuffer.tonyaldon.com" path)))
               (when (not (string= path "/"))
                 (let ((date (substring path 1 11)))
                   `(:entry
@@ -186,4 +186,4 @@ window.onscroll = toggleElementsOnScroll;
                     (:updated ,(concat date "T00:00:00Z")))))))
           pages))))))
 
-(add-hook 'one-hook 'posts-feed)
+(add-hook 'one-hook 'minibuffer-feed)
