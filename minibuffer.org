@@ -124,3 +124,22 @@
 ;; major-mode
 ;; buffer-read-only
 #+END_SRC
+
+* How to turn a function into a command in Emacs Lisp?
+:PROPERTIES:
+:ONE: minibuffer-one-episode
+:CUSTOM_ID: /2023-08-29-how-to-turn-a-function-into-a-command-in-emacs-lisp/
+:MINIBUFFER_CREATED_AT: [2023-08-29 Tue]
+:MINIBUFFER_YOUTUBE_LINK: https://www.youtube.com/watch?v=z8IJz25EDeA
+:END:
+
+#+BEGIN_SRC emacs-lisp
+(defun foo ()
+  "Print \"bar\""
+  (interactive)
+  (message "bar"))
+
+(foo)
+
+(global-set-key (kbd "C-<f1>") #'foo)
+#+END_SRC
