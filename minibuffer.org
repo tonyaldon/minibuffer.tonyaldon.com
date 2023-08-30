@@ -143,3 +143,17 @@
 
 (global-set-key (kbd "C-<f1>") #'foo)
 #+END_SRC
+
+* How to insert strings in a given buffer in Emacs Lisp?
+:PROPERTIES:
+:ONE: minibuffer-one-episode
+:CUSTOM_ID: /2023-08-30-how-to-insert-strings-in-a-given-buffer-in-emacs-lisp/
+:MINIBUFFER_CREATED_AT: [2023-08-30 Wed]
+:MINIBUFFER_YOUTUBE_LINK: https://www.youtube.com/watch?v=QXlmNjYpjNY
+:END:
+
+#+BEGIN_SRC emacs-lisp
+(with-current-buffer (get-buffer-create "*foo*")
+  (erase-buffer)
+  (insert "foo"))
+#+END_SRC
