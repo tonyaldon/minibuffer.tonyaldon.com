@@ -157,3 +157,18 @@
   (erase-buffer)
   (insert "foo"))
 #+END_SRC
+
+* How to list files in a given directory in Emacs Lisp?
+:PROPERTIES:
+:ONE: minibuffer-one-episode
+:CUSTOM_ID: /2023-08-31-how-to-list-files-in-a-given-directory-in-emacs-lisp/
+:MINIBUFFER_CREATED_AT: [2023-08-31 Thu]
+:MINIBUFFER_YOUTUBE_LINK: https://www.youtube.com/watch?v=5PgMa8bzcv4
+:END:
+
+#+BEGIN_SRC emacs-lisp
+(directory-files-and-attributes ".")
+(directory-files-and-attributes "." t)
+(dolist (f (directory-files-and-attributes "./emacs/" t))
+  (message (car f)))
+#+END_SRC
