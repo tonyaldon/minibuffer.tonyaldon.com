@@ -181,8 +181,11 @@
 :MINIBUFFER_YOUTUBE_LINK: https://www.youtube.com/watch?v=sPup0RjLLmo
 :END:
 
+Note: It is not recommended to use ~replace-regexp~ in Elisp programs as
+I did in the video.  I'll pay more attention in the next videos.
+
 #+BEGIN_SRC emacs-lisp
 (replace-regexp "-b" "^^^^")
-(replace-regexp "-b" "^^^^" (point-min) (point-max))
+(replace-regexp "-b" "^^^^" nil (point-min) (point-max))
 (replace-regexp "-b" "^^^^" nil (point-at-bol) (point-at-eol))
 #+END_SRC
