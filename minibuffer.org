@@ -172,3 +172,17 @@
 (dolist (f (directory-files-and-attributes "./emacs/" t))
   (message (car f)))
 #+END_SRC
+
+* How to replace regexp in buffers in Emacs Lisp?
+:PROPERTIES:
+:ONE: minibuffer-one-episode
+:CUSTOM_ID: /2023-09-01-how-to-replace-regexp-in-buffers-in-emacs-lisp/
+:MINIBUFFER_CREATED_AT: [2023-09-01 Fri]
+:MINIBUFFER_YOUTUBE_LINK: https://www.youtube.com/watch?v=sPup0RjLLmo
+:END:
+
+#+BEGIN_SRC emacs-lisp
+(replace-regexp "-b" "^^^^")
+(replace-regexp "-b" "^^^^" (point-min) (point-max))
+(replace-regexp "-b" "^^^^" nil (point-at-bol) (point-at-eol))
+#+END_SRC
