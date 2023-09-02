@@ -189,3 +189,18 @@ not recommended in Elisp programs in general.
 (replace-regexp "-b" "^^^^" nil (point-min) (point-max))
 (replace-regexp "-b" "^^^^" nil (point-at-bol) (point-at-eol))
 #+END_SRC
+
+* How to search for regexp in buffers in Emacs Lisp?
+:PROPERTIES:
+:ONE: minibuffer-one-episode
+:CUSTOM_ID: /2023-09-02-how-to-search-for-regexp-in-buffers-in-emacs-lisp/
+:MINIBUFFER_CREATED_AT: [2023-09-02 Sat]
+:MINIBUFFER_YOUTUBE_LINK: https://www.youtube.com/watch?v=LD7dNcBavnI
+:END:
+
+#+BEGIN_SRC emacs-lisp
+(re-search-forward "^foo")
+(point)
+(re-search-forward "^foo" nil t)
+(re-search-forward "^foo" 103 t)
+#+END_SRC
