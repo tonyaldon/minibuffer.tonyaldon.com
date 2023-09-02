@@ -181,8 +181,8 @@
 :MINIBUFFER_YOUTUBE_LINK: https://www.youtube.com/watch?v=sPup0RjLLmo
 :END:
 
-Note: It is not recommended to use ~replace-regexp~ in Elisp programs as
-I did in the video.  I'll pay more attention in the next videos.
+Note: Although it works, how I used ~replace-regexp~ in this video is
+not recommended in Elisp programs in general.
 
 #+BEGIN_SRC emacs-lisp
 (replace-regexp "-b" "^^^^")
