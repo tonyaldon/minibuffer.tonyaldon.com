@@ -170,7 +170,7 @@ window.onscroll = toggleElementsOnScroll;
         (:title "minibuffer")
         (:link (@ :href "https://minibuffer.tonyaldon.com"))
         (:id "urn:minibuffer-tonyaldon-com:feed")
-        (:updated "2023-09-01T00:00:00Z")
+        (:updated "2023-09-03T00:00:00Z")
         (:author (:name "Tony Aldon"))
         ,(mapcar
           (lambda (page)
