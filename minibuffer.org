@@ -204,3 +204,19 @@ not recommended in Elisp programs in general.
 (re-search-forward "^foo" nil t)
 (re-search-forward "^foo" 103 t)
 #+END_SRC
+
+* What influence does case-fold-search have on searches in Emacs Lisp?
+:PROPERTIES:
+:ONE: minibuffer-one-episode
+:CUSTOM_ID: /2023-09-03-what-influence-does-case-fold-search-have-on-searches-in-emacs-lisp/
+:MINIBUFFER_CREATED_AT: [2023-09-03 Sun]
+:MINIBUFFER_YOUTUBE_LINK: https://www.youtube.com/watch?v=eGZCZe5qLUE
+:END:
+
+#+BEGIN_SRC emacs-lisp
+case-fold-search ;; t
+(let ((case-fold-search nil))
+  (re-search-forward "^foo"))
+(let ((case-fold-search t))
+  (re-search-forward "^Foo"))
+#+END_SRC
