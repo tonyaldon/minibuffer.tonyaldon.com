@@ -220,3 +220,27 @@ case-fold-search ;; t
 (let ((case-fold-search t))
   (re-search-forward "^Foo"))
 #+END_SRC
+
+* How to manipulate the match data in Emacs Lisp?
+:PROPERTIES:
+:ONE: minibuffer-one-episode
+:CUSTOM_ID: /2023-09-04-how-to-manipulate-the-match-data-in-emacs-lisp/
+:MINIBUFFER_CREATED_AT: [2023-09-04 Mon]
+:MINIBUFFER_YOUTUBE_LINK: https://www.youtube.com/watch?v=G6bNaoyKW4c
+:END:
+
+#+BEGIN_SRC emacs-lisp
+(re-search-forward "foo-\\(.*\\)-baz")
+(progn
+  (re-search-forward "foo-\\(.*\\)-baz")
+  (match-string 0))
+(progn
+  (re-search-forward "foo-\\(.*\\)-baz")
+  (match-string 1))
+(progn
+  (re-search-forward "foo-\\(.*\\)-baz")
+  (replace-match "^^^"))
+(progn
+  (re-search-forward "foo-\\(.*\\)-baz")
+  (replace-match "^^^" nil nil nil 1))
+#+END_SRC
