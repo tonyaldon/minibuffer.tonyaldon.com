@@ -244,3 +244,17 @@ case-fold-search ;; t
   (re-search-forward "foo-\\(.*\\)-baz")
   (replace-match "^^^" nil nil nil 1))
 #+END_SRC
+
+* How to replace regexp in buffers in Emacs Lisp?
+:PROPERTIES:
+:ONE: minibuffer-one-episode
+:CUSTOM_ID: /2023-09-05-how-to-replace-regexp-in-buffers-in-emacs-lisp-with-a-while-loop/
+:MINIBUFFER_CREATED_AT: [2023-09-05 Tue]
+:MINIBUFFER_YOUTUBE_LINK: https://www.youtube.com/watch?v=CV_YB4t0JcQ
+:END:
+
+#+BEGIN_SRC emacs-lisp
+(replace-regexp "foo" "XXX")
+(while (re-search-forward "foo" nil t)
+  (replace-match "XXX"))
+#+END_SRC
