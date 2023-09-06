@@ -258,3 +258,16 @@ case-fold-search ;; t
 (while (re-search-forward "foo" nil t)
   (replace-match "XXX"))
 #+END_SRC
+
+* How to get the content in buffers in Emacs Lisp?
+:PROPERTIES:
+:ONE: minibuffer-one-episode
+:CUSTOM_ID: /2023-09-06-how-to-get-the-content-in-buffers-in-emacs-lisp/
+:MINIBUFFER_CREATED_AT: [2023-09-06 Wed]
+:MINIBUFFER_YOUTUBE_LINK: https://www.youtube.com/watch?v=H987Y7FxiJw
+:END:
+
+#+BEGIN_SRC emacs-lisp
+(buffer-substring (point-at-bol 3) (point-at-eol 3))
+(buffer-substring-no-properties (point-at-bol 3) (point-at-eol 3))
+#+END_SRC
