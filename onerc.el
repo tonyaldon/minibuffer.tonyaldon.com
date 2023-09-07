@@ -146,16 +146,16 @@ window.onscroll = toggleElementsOnScroll;
           (:div/primary
            ,youtube-iframe
            (:h1 ,title)
-           (:div.date (@ :style "padding-bottom:1em;") ,date)
-           ,content)
+           (:div.date (@ :style "text-align:center; margin-bottom:16px;") ,date)
+           ,content
+           ,minibuffer-footer)
           (:div/secondary
            (:div/items
             ,(mapcar (lambda (page) (minibuffer-item page 'is-episode-p))
                      (seq-filter
                       (lambda (page)
                         (minibuffer-is-episode-p (plist-get page :one-path)))
-                      pages)))))
-         ,minibuffer-footer)
+                      pages))))))
         (:script ,minibuffer-js-onscroll))))))
 
 ;;; feed.xml
