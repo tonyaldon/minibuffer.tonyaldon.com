@@ -122,7 +122,8 @@ window.onscroll = toggleElementsOnScroll;
           (org-export-data-with-backend
            (org-element-contents page-tree)
            'one nil))
-         (headlines (cdr (one-default-list-headlines page-tree))))
+         (headlines (cdr (one-default-list-headlines page-tree)))
+         (nav (one-default-nav path pages)))
     (jack-html
      "<!DOCTYPE html>"
      `(:html (@ :lang "en")
@@ -148,6 +149,7 @@ window.onscroll = toggleElementsOnScroll;
            (:h1 ,title)
            (:div.date (@ :style "text-align:center; margin-bottom:16px;") ,date)
            ,content
+           ,nav
            ,minibuffer-footer)
           (:div/secondary
            (:div/items
