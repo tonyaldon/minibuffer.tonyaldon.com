@@ -366,6 +366,18 @@ iframe {
   grid-gap: 16px;
 }
 
+@media (max-width:480px) {
+  #items-home img {
+    display: none;
+  }
+  .details {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap-reverse;
+    border-bottom: 1px solid #1d272b;
+  }
+}
+
 @media (min-width: 1440px) {
   #items-home {
     grid-template-columns: repeat(4, minmax(280px,1fr));
