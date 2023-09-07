@@ -178,7 +178,7 @@ https://stackoverflow.com/questions/2450954/how-to-randomize-shuffle-a-javascrip
                      (seq-filter
                       (lambda (page)
                         (minibuffer-is-episode-p (plist-get page :one-path)))
-                      pages))))))
+                      (minibuffer-shuffle (vconcat pages))))))))
         (:script ,minibuffer-js-onscroll))))))
 
 ;;; feed.xml
