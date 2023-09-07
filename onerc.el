@@ -64,6 +64,27 @@ window.onscroll = toggleElementsOnScroll;
                      '(:width "640px" :height "360px")))))
        (:div.details (:h4 ,title) (:div.date ,date))))))
 
+(defun minibuffer-shuffle (vector)
+  "Shuffle vector using Fisher-Yates algo.
+https://stackoverflow.com/questions/2450954/how-to-randomize-shuffle-a-javascript-array."
+  (let* ((vec (seq-copy vector))
+         (limit (expt 10 16))
+         (current-index (length vector))
+         random-index
+         elt-at-random-index
+         elt-at-current-index
+         )
+    (while (> current-index 0)
+      (setq random-index (floor (* current-index (/ (random 100) (float 100)))))
+      (setq current-index (1- current-index))
+      (setq elt-at-current-index (aref vec current-index))
+      (setq elt-at-random-index (aref vec random-index))
+      (aset vec current-index elt-at-random-index)
+      (aset vec random-index elt-at-current-index))
+    vec))
+
+;; (minibuffer-shuffle '[1 2 3 4 5]) ; [1 3 2 5 4]
+
 (defun minibuffer-one-home (page-tree pages global)
   "FIXME"
   (let* ((title (org-element-property :raw-value page-tree)))
