@@ -193,7 +193,7 @@ https://stackoverflow.com/questions/2450954/how-to-randomize-shuffle-a-javascrip
         (:title "minibuffer")
         (:link (@ :href "https://minibuffer.tonyaldon.com"))
         (:id "urn:minibuffer-tonyaldon-com:feed")
-        (:updated "2023-09-06T00:00:00Z")
+        (:updated (format-time-string "%FT%T%z"))
         (:author (:name "Tony Aldon"))
         ,(mapcar
           (lambda (page)
