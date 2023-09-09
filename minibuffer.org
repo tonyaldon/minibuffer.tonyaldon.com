@@ -310,3 +310,18 @@ vec1 ;; [foo b c]
 (cl-rotatef (aref vec 0) (aref vec 2))
 vec ;; [baz bar foo]
 #+END_SRC
+
+* How to run a unix utility on file at point in dired in Emacs Lisp?
+:PROPERTIES:
+:ONE: minibuffer-one-episode
+:CUSTOM_ID: /2023-09-09-how-to-run-a-unix-utility-on-file-at-point-in-dired-in-emacs-lisp/
+:MINIBUFFER_CREATED_AT: [2023-09-09 Sat]
+:MINIBUFFER_YOUTUBE_LINK: https://www.youtube.com/watch?v=0kzbFsRB4vk
+:END:
+
+#+BEGIN_SRC emacs-lisp
+(let* ((fn (dired-file-name-at-point))
+       (fn-base (file-name-base fn))
+       (cmd (format "convert %s %s" fn (concat fn-base ".jpg"))))
+  (shell-command cmd))
+#+END_SRC
