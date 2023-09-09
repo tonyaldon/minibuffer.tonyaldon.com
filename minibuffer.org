@@ -295,7 +295,7 @@ vec2 ;; [bar b c]
 vec1 ;; [foo b c]
 #+END_SRC
 
-* How to manipulate vectors in Emacs Lisp?
+* How to swap elements in vectors in Emacs Lisp?
 :PROPERTIES:
 :ONE: minibuffer-one-episode
 :CUSTOM_ID: /2023-09-08-how-to-swap-elements-in-vectors-in-emacs-lisp/
