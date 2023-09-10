@@ -325,3 +325,21 @@ vec ;; [baz bar foo]
        (cmd (format "convert %s %s" fn (concat fn-base ".jpg"))))
   (shell-command cmd))
 #+END_SRC
+
+* How to copy the current line below in Emacs Lisp?
+:PROPERTIES:
+:ONE: minibuffer-one-episode
+:CUSTOM_ID: /2023-09-10-how-to-copy-the-current-line-below-in-emacs-lisp/
+:MINIBUFFER_CREATED_AT: [2023-09-10 Sun]
+:MINIBUFFER_YOUTUBE_LINK: https://www.youtube.com/watch?v=IbrgXydt6iM
+:END:
+
+#+BEGIN_SRC emacs-lisp
+(defun copy-current-line-below ()
+  "Copy current line and past it below"
+  (interactive)
+  (let ((line (buffer-substring (point-at-bol) (point-at-eol))))
+    (save-excursion
+      (forward-line)
+      (insert line "\n"))))
+#+END_SRC
