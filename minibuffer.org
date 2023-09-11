@@ -351,3 +351,17 @@ You might be interested in:
 - [[#/2023-09-06-how-to-get-the-content-in-buffers-in-emacs-lisp/][How to get the content in buffers in Emacs Lisp?]] (~buffer-substring~) and
 - [[#/2023-08-27-how-to-insert-foo-at-the-end-of-buffer-without-changing-point-with-emacs-lisp/][How to insert foo at the end of buffer without changing point with
   Emacs Lisp?]] (~save-excursion~).
+
+* How to start a shell in a window below in Emacs Lisp?
+:PROPERTIES:
+:ONE: minibuffer-one-episode
+:CUSTOM_ID: /2023-09-11-how-to-start-a-shell-in-a-window-below-in-emacs-lisp/
+:MINIBUFFER_CREATED_AT: [2023-09-11 Mon]
+:MINIBUFFER_YOUTUBE_LINK: https://www.youtube.com/watch?v=3tybE9IYKuA
+:END:
+
+#+BEGIN_SRC emacs-lisp
+(progn
+  (select-window (split-window-below -8))
+  (shell))
+#+END_SRC
