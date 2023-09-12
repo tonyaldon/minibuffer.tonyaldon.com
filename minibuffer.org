@@ -365,3 +365,26 @@ You might be interested in:
   (select-window (split-window-below -8))
   (shell))
 #+END_SRC
+
+* How to move the point around in buffers in Emacs Lisp?
+:PROPERTIES:
+:ONE: minibuffer-one-episode
+:CUSTOM_ID: /2023-09-12-how-to-move-the-point-around-in-buffers-in-emacs-lisp/
+:MINIBUFFER_CREATED_AT: [2023-09-12 Tue]
+:MINIBUFFER_YOUTUBE_LINK: https://www.youtube.com/watch?v=6e5cyzo6b-s
+:END:
+
+#+BEGIN_SRC emacs-lisp
+(point) ;; 349
+(point-min) ;; 1
+(point-max) ;; 385
+(goto-char 349)
+(goto-char (point-min))
+(goto-char (point-max))
+
+(forward-char 4)
+(backward-char 4)
+
+(beginning-of-line)
+(end-of-line)
+#+END_SRC
