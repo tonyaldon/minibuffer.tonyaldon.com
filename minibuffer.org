@@ -388,3 +388,20 @@ You might be interested in:
 (beginning-of-line)
 (end-of-line)
 #+END_SRC
+
+* How to stop displaying calls to message in Emacs Lisp?
+:PROPERTIES:
+:ONE: minibuffer-one-episode
+:CUSTOM_ID: /2023-09-13-how-to-stop-displaying-calls-to-message-in-emacs-lisp/
+:MINIBUFFER_CREATED_AT: [2023-09-13 Wed]
+:MINIBUFFER_YOUTUBE_LINK: https://www.youtube.com/watch?v=I-uEaHCNkLc
+:END:
+
+#+BEGIN_SRC emacs-lisp
+(defun my-call-to-message ()
+  (message "foo")
+  (sleep-for 2))
+
+(let ((inhibit-message t))
+  (my-call-to-message))
+#+END_SRC
