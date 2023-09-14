@@ -405,3 +405,17 @@ You might be interested in:
 (let ((inhibit-message t))
   (my-call-to-message))
 #+END_SRC
+
+* How to save and restore the selected window in Emacs Lisp?
+:PROPERTIES:
+:ONE: minibuffer-one-episode
+:CUSTOM_ID: /2023-09-14-how-to-save-and-restore-the-selected-window-in-emacs-lisp/
+:MINIBUFFER_CREATED_AT: [2023-09-14 Thu]
+:MINIBUFFER_YOUTUBE_LINK: https://www.youtube.com/watch?v=8OkiWhQ1vOM
+:END:
+
+#+BEGIN_SRC emacs-lisp
+(save-selected-window
+  (other-window 1)
+  (insert "bar\n"))
+#+END_SRC
