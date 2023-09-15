@@ -419,3 +419,19 @@ You might be interested in:
   (other-window 1)
   (insert "bar\n"))
 #+END_SRC
+
+* How to loop over the window list of the selected frame in Emacs Lisp?
+:PROPERTIES:
+:ONE: minibuffer-one-episode
+:CUSTOM_ID: /2023-09-15-how-to-loop-over-the-window-list-of-the-selected-frame-in-emacs-lisp/
+:MINIBUFFER_CREATED_AT: [2023-09-15 Fri]
+:MINIBUFFER_YOUTUBE_LINK: https://www.youtube.com/watch?v=gHBeAaV6yDg
+:END:
+
+#+BEGIN_SRC emacs-lisp
+(window-list) ;; (#<window 3 on notes.el> #<window 11 on foo> #<window 13 on bar>)
+(window-list nil t) ;; (#<window 3 on notes.el> #<window 11 on foo> #<window 13 on bar> #<window 4 on  *Minibuf-0*>)
+(window-buffer (selected-window)) ;; #<buffer notes.el>
+(dolist (w (window-list))
+  (message "%S" (window-buffer w)))
+#+END_SRC
