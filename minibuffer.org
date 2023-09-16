@@ -435,3 +435,24 @@ You might be interested in:
 (dolist (w (window-list))
   (message "%S" (window-buffer w)))
 #+END_SRC
+
+* How to select a word in a list with minibuffer completion in Emacs Lisp?
+:PROPERTIES:
+:ONE: minibuffer-one-episode
+:CUSTOM_ID: /2023-09-16-how-to-select-a-word-in-a-list-with-minibuffer-completion-in-emacs-lisp/
+:MINIBUFFER_CREATED_AT: [2023-09-16 Sat]
+:MINIBUFFER_YOUTUBE_LINK: https://www.youtube.com/watch?v=4-SlzJL9JiI
+:END:
+
+#+BEGIN_SRC emacs-lisp
+(defun select-word-with-minibuffer-completion ()
+  "Select a word with minibuffer completion."
+  (interactive)
+
+  (let ((word (completing-read "Select word: " '("foo" "bar" "baz"))) ;; match not required
+        ;; (word (completing-read "Select word: " '("foo" "bar" "baz") nil t)) ;; match required
+        )
+    (message "%s" word)))
+
+(global-set-key (kbd "C-<f1>") #'select-word-with-minibuffer-completion)
+#+END_SRC
