@@ -456,3 +456,22 @@ You might be interested in:
 
 (global-set-key (kbd "C-<f1>") #'select-word-with-minibuffer-completion)
 #+END_SRC
+
+* How to write buffer region into a file in Emacs Lisp?
+:PROPERTIES:
+:ONE: minibuffer-one-episode
+:CUSTOM_ID: /2023-09-17-how-to-write-buffer-region-into-a-file-in-emacs-lisp/
+:MINIBUFFER_CREATED_AT: [2023-09-17 Sun]
+:MINIBUFFER_YOUTUBE_LINK: https://www.youtube.com/watch?v=yzlCqStHIhs
+:END:
+
+#+BEGIN_SRC emacs-lisp
+(write-region (point-at-bol) (point-at-eol) "foo.txt")
+(write-region nil nil "foo.txt")
+(write-region nil nil "foo.txt" t)
+(write-region "foo" nil "foo.txt")
+
+(progn
+  (make-directory "foo/bar" t)
+  (write-region nil nil "foo/bar/baz.txt"))
+#+END_SRC
