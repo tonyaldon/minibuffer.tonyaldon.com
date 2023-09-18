@@ -475,3 +475,21 @@ You might be interested in:
   (make-directory "foo/bar" t)
   (write-region nil nil "foo/bar/baz.txt"))
 #+END_SRC
+
+* How to display the documentation of the symbol at point Emacs Lisp?
+:PROPERTIES:
+:ONE: minibuffer-one-episode
+:CUSTOM_ID: /2023-09-18-how-to-display-the-documentation-of-the-symbol-at-point-emacs-lisp/
+:MINIBUFFER_CREATED_AT: [2023-09-18 Mon]
+:MINIBUFFER_YOUTUBE_LINK: https://www.youtube.com/watch?v=Y5WLDmWaBNg
+:END:
+
+#+BEGIN_SRC emacs-lisp
+(defun symbol-description-at-point ()
+  "Display documentation of symbol at point."
+  (interactive)
+  (when-let ((symbol (symbol-at-point)))
+    (describe-symbol symbol)))
+
+(global-set-key (kbd "C-<f1>") #'symbol-description-at-point)
+#+END_SRC
