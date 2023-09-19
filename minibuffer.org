@@ -493,3 +493,21 @@ You might be interested in:
 
 (global-set-key (kbd "C-<f1>") #'symbol-description-at-point)
 #+END_SRC
+
+* Do you know about the Emacs Lisp function split-line?
+:PROPERTIES:
+:ONE: minibuffer-one-episode
+:CUSTOM_ID: /2023-09-19-do-you-know-about-the-emacs-lisp-function-split-line/
+:MINIBUFFER_CREATED_AT: [2023-09-19 Tue]
+:MINIBUFFER_YOUTUBE_LINK: https://www.youtube.com/watch?v=eLp9qyGM3GU
+:END:
+
+#+BEGIN_SRC emacs-lisp
+(defun new-line-above ()
+  "Add an empty line above and move the cursor to this line."
+  (interactive)
+  (back-to-indentation)
+  (split-line))
+
+(global-set-key (kbd "C-<f1>") #'new-line-above)
+#+END_SRC
