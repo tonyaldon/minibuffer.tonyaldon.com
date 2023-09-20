@@ -511,3 +511,18 @@ You might be interested in:
 
 (global-set-key (kbd "C-<f1>") #'new-line-above)
 #+END_SRC
+
+* How to make Emacs unusable using the hook post-self-insert-hook?
+:PROPERTIES:
+:ONE: minibuffer-one-episode
+:CUSTOM_ID: /2023-09-20-how-to-make-emacs-unusable-using-the-hook-post-self-insert-hook/
+:MINIBUFFER_CREATED_AT: [2023-09-20 Wed]
+:MINIBUFFER_YOUTUBE_LINK: https://www.youtube.com/watch?v=O09FjRyjXLU
+:END:
+
+#+BEGIN_SRC emacs-lisp
+(defun insert-^^ () (insert "^^"))
+
+(add-hook 'post-self-insert-hook #'insert-^^)
+(remove-hook 'post-self-insert-hook #'insert-^^)
+#+END_SRC
