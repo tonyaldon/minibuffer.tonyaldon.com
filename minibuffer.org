@@ -526,3 +526,21 @@ You might be interested in:
 (add-hook 'post-self-insert-hook #'insert-^^)
 (remove-hook 'post-self-insert-hook #'insert-^^)
 #+END_SRC
+
+* How to define a command that works on the selected region in Emacs Lisp?
+:PROPERTIES:
+:ONE: minibuffer-one-episode
+:CUSTOM_ID: /2023-09-21-how-to-define-a-command-that-works-on-the-selected-region-in-emacs-lisp/
+:MINIBUFFER_CREATED_AT: [2023-09-21 Thu]
+:MINIBUFFER_YOUTUBE_LINK: https://www.youtube.com/watch?v=ZwYU1v3Abug
+:END:
+
+#+BEGIN_SRC emacs-lisp
+(defun command-on-region (beg end)
+  "..."
+  (interactive "r")
+  (message "beg: %s\nend: %s" beg end)
+  (deactivate-mark))
+
+(global-set-key (kbd "C-<f1>") #'command-on-region)
+#+END_SRC
