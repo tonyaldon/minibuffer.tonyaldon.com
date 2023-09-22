@@ -544,3 +544,19 @@ You might be interested in:
 
 (global-set-key (kbd "C-<f1>") #'command-on-region)
 #+END_SRC
+
+* How to check that we have reached the end of buffer in Emacs Lisp?
+:PROPERTIES:
+:ONE: minibuffer-one-episode
+:CUSTOM_ID: /2023-09-22-how-to-check-that-we-have-reached-the-end-of-buffer-in-emacs-lisp/
+:MINIBUFFER_CREATED_AT: [2023-09-22 Fri]
+:MINIBUFFER_YOUTUBE_LINK: https://www.youtube.com/watch?v=H_Q_PFREJeY
+:END:
+
+#+BEGIN_SRC emacs-lisp
+(while (not (eobp))
+  (message "%s: %s"
+           (line-number-at-pos)
+           (buffer-substring-no-properties (point-at-bol) (point-at-eol)))
+  (forward-line))
+#+END_SRC
