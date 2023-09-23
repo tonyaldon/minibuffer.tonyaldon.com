@@ -560,3 +560,35 @@ You might be interested in:
            (buffer-substring-no-properties (point-at-bol) (point-at-eol)))
   (forward-line))
 #+END_SRC
+
+* How to run some Emacs Lisp code in batch mode?
+:PROPERTIES:
+:ONE: minibuffer-one-episode
+:CUSTOM_ID: /2023-09-23-how-to-run-some-emacs-lisp-code-in-batch-mode/
+:MINIBUFFER_CREATED_AT: [2023-09-23 Sat]
+:MINIBUFFER_YOUTUBE_LINK: https://www.youtube.com/watch?v=psZbG0HEHSs
+:END:
+
+#+BEGIN_SRC tms
+◉ tony@tony:~/minibuffer:
+$ emacs --batch
+◉ tony@tony:~/minibuffer:
+$ emacs --batch --eval '(+ 1 1)'
+◉ tony@tony:~/minibuffer:
+$ emacs --batch --eval '(message "%s" (+ 1 1))'
+2
+◉ tony@tony:~/minibuffer:
+$ emacs --batch --eval '(message "%s" (+ 1 1))' 2>err
+◉ tony@tony:~/minibuffer:
+$ cat err
+2
+◉ tony@tony:~/minibuffer:
+$ emacs --batch --eval '(princ (+ 1 1))'
+2◉ tony@tony:~/minibuffer:
+$ emacs --batch --eval '(princ (+ 1 1))' 2>err
+2◉ tony@tony:~/minibuffer:
+$ emacs --batch --eval '(princ (read-string ""))'
+^C◉ tony@tony:~/minibuffer:
+$ echo foo | emacs --batch --eval '(princ (read-string ""))'
+foo
+#+END_SRC
