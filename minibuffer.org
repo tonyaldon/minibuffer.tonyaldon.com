@@ -592,3 +592,35 @@ $ emacs --batch --eval '(princ (read-string ""))'
 $ echo foo | emacs --batch --eval '(princ (read-string ""))'
 foo
 #+END_SRC
+
+* How to run some Emacs Lisp code in batch mode #2?
+:PROPERTIES:
+:ONE: minibuffer-one-episode
+:CUSTOM_ID: /2023-09-24-how-to-run-some-emacs-lisp-code-in-batch-mode-2/
+:MINIBUFFER_CREATED_AT: [2023-09-24 Sun]
+:MINIBUFFER_YOUTUBE_LINK: https://www.youtube.com/watch?v=zh_q-eeHOqw
+:END:
+
+#+BEGIN_SRC tms
+◉ tony@tony:~/minibuffer:
+$ echo How to run some Emacs Lisp code in batch mode \#2?
+How to run some Emacs Lisp code in batch mode #2?
+◉ tony@tony:~/minibuffer:
+$ emacs --batch --eval '(princ (read-string ""))'
+foo
+foo◉ tony@tony:~/minibuffer:
+$ emacs --batch --load my-elisp.el
+bar
+bar◉ tony@tony:~/minibuffer:
+$ emacs --batch --load my-elisp.el --eval '(princ bar)'
+foo
+I'm foo◉ tony@tony:~/minibuffer:
+$
+#+END_SRC
+
+~my-elisp.el~:
+
+#+BEGIN_SRC emacs-lisp
+(setq foo (read-string ""))
+(setq bar (concat "I'm " foo))
+#+END_SRC
