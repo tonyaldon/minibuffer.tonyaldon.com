@@ -624,3 +624,20 @@ $
 (setq foo (read-string ""))
 (setq bar (concat "I'm " foo))
 #+END_SRC
+
+* How to write tests in Emacs Lisp?
+:PROPERTIES:
+:ONE: minibuffer-one-episode
+:CUSTOM_ID: /2023-09-25-how-to-write-tests-in-emacs-lisp/
+:MINIBUFFER_CREATED_AT: [2023-09-25 Mon]
+:MINIBUFFER_YOUTUBE_LINK: https://www.youtube.com/watch?v=H5FxcTh3QrI
+:END:
+
+#+BEGIN_SRC emacs-lisp
+(defun foo ()
+    "..."
+  "bar")
+
+(ert-deftest foo-test ()
+  (should (string= (foo) "bar")))
+#+END_SRC
