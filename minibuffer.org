@@ -641,3 +641,25 @@ $
 (ert-deftest foo-test ()
   (should (string= (foo) "bar")))
 #+END_SRC
+
+* How to throw and test errors in Emacs Lisp?
+:PROPERTIES:
+:ONE: minibuffer-one-episode
+:CUSTOM_ID: /2023-09-26-how-to-throw-and-test-errors-in-emacs-lisp/
+:MINIBUFFER_CREATED_AT: [2023-09-26 Tue]
+:MINIBUFFER_YOUTUBE_LINK: https://www.youtube.com/watch?v=qW6q8HeHt0s
+:END:
+
+#+BEGIN_SRC emacs-lisp
+(defun foo (x)
+  "Return x.  If x < 0, throw an error."
+  (if (< x 0)
+      (error "%s is negative" x)
+    x))
+
+(ert-deftest foo-test ()
+  (should (= (foo 10) 10))
+  (should-error (foo -1)))
+
+(foo -1)
+#+END_SRC
