@@ -663,3 +663,129 @@ $
 
 (foo -1)
 #+END_SRC
+
+* What does Org parsed tree look like in Emacs Lisp?
+:PROPERTIES:
+:ONE: minibuffer-one-episode
+:CUSTOM_ID: /2023-09-27-what-does-org-parsed-tree-look-like-in-emacs-lisp/
+:MINIBUFFER_CREATED_AT: [2023-09-27 Wed]
+:MINIBUFFER_YOUTUBE_LINK: https://www.youtube.com/watch?v=We5X5mfmWz8
+:END:
+
+#+BEGIN_SRC emacs-lisp
+(org-element-parse-buffer)
+#+END_SRC
+
+#+BEGIN_SRC org
+,#+title: What does Org parsed tree look like in Emacs Lisp?
+
+,* foo
+,** foo level 2
+
+- item 1
+- item 2
+- item 3
+
+,* bar
+
+,#+BEGIN_SRC bash
+echo foo bar baz
+,#+END_SRC
+
+,* baz
+
+,#+BEGIN_SRC emacs-lisp
+(org-element-parse-buffer)
+,#+END_SRC
+#+END_SRC
+
+#+BEGIN_SRC emacs-lisp
+(org-data
+ nil
+ (section
+  (:begin 1 :end 62 :contents-begin 1 :contents-end 61
+   :post-blank 1 :post-affiliated 1 :parent #0)
+  (keyword
+   (:key "TITLE" :value "What does Org parsed tree look like in Emacs Lisp?"
+    :begin 1 :end 61 :post-blank 0 :post-affiliated 1 :parent #1)))
+ (headline
+  (:raw-value "foo" :begin 62 :end 112 :pre-blank 0 :contents-begin 68 :contents-end 111
+   :level 1 :priority nil :tags nil :todo-keyword nil :todo-type nil
+   :post-blank 1 :footnote-section-p nil :archivedp nil :commentedp nil :post-affiliated 62
+   :title (#("foo" 0 3 (:parent #1)))
+   :parent #0)
+  (headline
+   (:raw-value "foo level 2" :begin 68 :end 111 :pre-blank 1 :contents-begin 84 :contents-end 111
+    :level 2 :priority nil :tags nil :todo-keyword nil :todo-type nil :post-blank 0
+    :footnote-section-p nil :archivedp nil :commentedp nil :post-affiliated 68
+    :title (#("foo level 2" 0 11 (:parent #2)))
+    :parent #1)
+   (section
+    (:begin 84 :end 112 :contents-begin 84 :contents-end 111
+     :post-blank 1 :post-affiliated 84 :parent #2)
+    (plain-list
+     (:type unordered :begin 84 :end 111 :contents-begin 84 :contents-end 111
+      :structure ((84 0 "- " nil nil nil 93)
+                  (93 0 "- " nil nil nil 102)
+                  (102 0 "- " nil nil nil 111))
+      :post-blank 0 :post-affiliated 84 :parent #3)
+     (item
+      (:bullet "- " :begin 84 :end 93 :contents-begin 86 :contents-end 93
+       :checkbox nil :counter nil
+       :structure ((84 0 "- " nil nil nil 93)
+                   (93 0 "- " nil nil nil 102)
+                   (102 0 "- " nil nil nil 111))
+       :pre-blank 0 :post-blank 0 :post-affiliated 84 :tag nil :parent #4)
+      (paragraph
+       (:begin 86 :end 93 :contents-begin 86 :contents-end 93 :post-blank 0
+        :post-affiliated 86 :parent #5)
+       #("item 1\n" 0 7 (:parent #6))))
+     (item
+      (:bullet "- " :begin 93 :end 102 :contents-begin 95 :contents-end 102
+       :checkbox nil :counter nil
+       :structure ((84 0 "- " nil nil nil 93)
+                   (93 0 "- " nil nil nil 102)
+                   (102 0 "- " nil nil nil 111))
+       :pre-blank 0 :post-blank 0 :post-affiliated 93 :tag nil :parent #4)
+      (paragraph
+       (:begin 95 :end 102 :contents-begin 95 :contents-end 102
+        :post-blank 0 :post-affiliated 95 :parent #5)
+       #("item 2\n" 0 7 (:parent #6))))
+     (item
+      (:bullet "- " :begin 102 :end 111 :contents-begin 104 :contents-end 111
+       :checkbox nil :counter nil
+       :structure ((84 0 "- " nil nil nil 93)
+                   (93 0 "- " nil nil nil 102)
+                   (102 0 "- " nil nil nil 111))
+       :pre-blank 0 :post-blank 0 :post-affiliated 102 :tag nil :parent #4)
+      (paragraph
+       (:begin 104 :end 111 :contents-begin 104 :contents-end 111
+        :post-blank 0 :post-affiliated 104 :parent #5)
+       #("item 3\n" 0 7 (:parent #6))))))))
+ (headline
+  (:raw-value "bar" :begin 112 :end 164 :pre-blank 1 :contents-begin 119 :contents-end 163
+   :level 1 :priority nil :tags nil :todo-keyword nil :todo-type nil :post-blank 1
+   :footnote-section-p nil :archivedp nil :commentedp nil :post-affiliated 112
+   :title (#("bar" 0 3 (:parent #1)))
+   :parent #0)
+  (section
+   (:begin 119 :end 164 :contents-begin 119 :contents-end 163 :post-blank 1 :post-affiliated 119
+    :parent #1)
+   (src-block
+    (:language "bash" :switches nil :parameters nil :begin 119 :end 163 :number-lines nil
+     :preserve-indent nil :retain-labels t :use-labels t :label-fmt nil
+     :value "echo foo bar baz\n" :post-blank 0 :post-affiliated 119 :parent #2))))
+ (headline
+  (:raw-value "baz" :begin 164 :end :pre-blank 1 :contents-begin 171 :contents-end 231
+   :level 1 :priority nil :tags nil :todo-keyword nil :todo-type nil :post-blank 0
+   :footnote-section-p nil :archivedp nil :commentedp nil :post-affiliated 164
+   :title (#("baz" 0 3 (:parent #1)))
+   :parent #0)
+  (section
+   (:begin 171 :end 231 :contents-begin 171 :contents-end 231 :post-blank 0
+    :post-affiliated 171 :parent #1)
+   (src-block
+    (:language "emacs-lisp" :switches nil :parameters nil :begin 171 :end 231 :number-lines nil
+     :preserve-indent nil :retain-labels t :use-labels t :label-fmt nil
+     :value "(org-element-parse-buffer)\n" :post-blank 0 :post-affiliated 171 :parent #2)))))
+#+END_SRC
