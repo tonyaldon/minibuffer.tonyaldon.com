@@ -789,3 +789,131 @@ echo foo bar baz
      :preserve-indent nil :retain-labels t :use-labels t :label-fmt nil
      :value "(org-element-parse-buffer)\n" :post-blank 0 :post-affiliated 171 :parent #2)))))
 #+END_SRC
+
+* Do you know how to list org-mode source blocks with Emacs Lisp?
+:PROPERTIES:
+:ONE: minibuffer-one-episode
+:CUSTOM_ID: /2023-09-28-do-you-know-how-to-list-org-mode-source-blocks-with-emacs-lisp/
+:MINIBUFFER_CREATED_AT: [2023-09-28 Thu]
+:MINIBUFFER_YOUTUBE_LINK: https://www.youtube.com/watch?v=h6YuiSlB2dQ
+:END:
+
+#+BEGIN_SRC emacs-lisp
+(org-element-parse-buffer)
+(org-element-map (org-element-parse-buffer) 'src-block #'identity)
+(org-element-map (org-element-parse-buffer) 'src-block
+  (lambda (sb) (org-element-property :language sb)))
+;; ("bash" "emacs-lisp")
+
+(org-element-property
+ :language
+ '(src-block (:language "bash" :value "ls -al")))
+;; "bash"
+
+;; (lambda (sb) (org-element-property :language sb))
+#+END_SRC
+
+#+BEGIN_SRC org
+,#+title: Do you know how to list org-mode source blocks with Emacs Lisp?
+
+,* foo
+,** foo level 2
+
+- item 1
+- item 2
+- item 3
+
+,* bar
+
+,#+BEGIN_SRC bash
+echo foo bar baz
+,#+END_SRC
+
+,* baz
+
+,#+BEGIN_SRC emacs-lisp
+;; org-element-parse-buffer
+;; org-element-map
+;; org-element-property
+,#+END_SRC
+#+END_SRC
+
+#+BEGIN_SRC emacs-lisp
+(org-data
+ nil
+ (section ...)
+ (headline
+  ...
+  (headline ...))
+ (headline
+  ...
+  (section
+   ...
+   (src-block
+    (:language "bash"
+     :switches nil
+     :parameters nil
+     :begin 132
+     :end 176
+     :number-lines nil
+     :preserve-indent nil
+     :retain-labels t
+     :use-labels t
+     :label-fmt nil
+     :value "echo foo bar baz\n"
+     :post-blank 0
+     :post-affiliated 132
+     :parent #2))))
+ (headline
+  ...
+  (section
+   ...
+   (src-block
+    (:language "emacs-lisp"
+     :switches nil
+     :parameters nil
+     :begin 184
+     :end 288
+     :number-lines nil
+     :preserve-indent nil
+     :retain-labels t
+     :use-labels t
+     :label-fmt nil
+     :value ";; org-element-parse-buffer\n;; org-element-map\n;; org-element-property\n"
+     :post-blank 0
+     :post-affiliated 184
+     :parent #2)))))
+#+END_SRC
+
+#+BEGIN_SRC emacs-lisp
+((src-block
+  (:language "bash"
+   :switches nil
+   :parameters nil
+   :begin 132
+   :end 176
+   :number-lines nil
+   :preserve-indent nil
+   :retain-labels t
+   :use-labels t
+   :label-fmt nil
+   :value "echo foo bar baz\n"
+   :post-blank 0
+   :post-affiliated 132
+   :parent ...))
+ (src-block
+  (:language "emacs-lisp"
+   :switches nil
+   :parameters nil
+   :begin 184
+   :end 288
+   :number-lines nil
+   :preserve-indent nil
+   :retain-labels t
+   :use-labels t
+   :label-fmt nil
+   :value ";; org-element-parse-buffer\n;; org-element-map\n;; org-element-property\n"
+   :post-blank 0
+   :post-affiliated 184
+   :parent ...)))
+#+END_SRC
