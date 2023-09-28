@@ -64,8 +64,20 @@ window.onscroll = toggleElementsOnScroll;
                      '(:width "640px" :height "360px")))))
        (:div.details (:h4 ,title) (:div.date ,date))))))
 
+;; https://lists.gnu.org/archive/html/bug-gnu-emacs/2018-04/msg00905.html
+;; (defun elfeed--shuffle (seq)
+;;   "Destructively shuffle SEQ."
+;;   (let ((n (length seq)))
+;;     (prog1 seq                  ; don't use dotimes result (bug#16206)
+;;       (dotimes (i n)
+;;         (cl-rotatef (elt seq i) (elt seq (+ i (random (- n i)))))))))
+;; (defun shuffle (v)
+;;   (let ((n (length v)))
+;;     (dotimes (i (1- n) v)
+;;       (cl-rotatef (aref v i) (aref v (+ i (random (- n i))))))))
+
 (defun minibuffer-shuffle (vector)
-  "Shuffle vector using Fisher-Yates algo.
+  "Shuffle vectors using Fisher-Yates algo.
 https://stackoverflow.com/questions/2450954/how-to-randomize-shuffle-a-javascript-array."
   (let* ((vec (seq-copy vector))
          (limit (expt 10 16))
@@ -75,7 +87,7 @@ https://stackoverflow.com/questions/2450954/how-to-randomize-shuffle-a-javascrip
          elt-at-current-index
          )
     (while (> current-index 0)
-      (setq random-index (floor (* current-index (/ (random 100) (float 100)))))
+      (setq random-index (floor (* current-index (/ (random limit) (float limit)))))
       (setq current-index (1- current-index))
       (setq elt-at-current-index (aref vec current-index))
       (setq elt-at-random-index (aref vec random-index))
@@ -83,7 +95,7 @@ https://stackoverflow.com/questions/2450954/how-to-randomize-shuffle-a-javascrip
       (aset vec random-index elt-at-current-index))
     vec))
 
-;; (minibuffer-shuffle '[1 2 3 4 5]) ; [1 3 2 5 4]
+;; (minibuffer-shuffle '[1 2 3 4 5]) ; [5 4 1 3 2]
 
 (defun minibuffer-one-home (page-tree pages global)
   "FIXME"
