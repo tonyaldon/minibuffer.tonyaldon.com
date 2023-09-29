@@ -917,3 +917,23 @@ echo foo bar baz
    :post-affiliated 184
    :parent ...)))
 #+END_SRC
+
+* Do you know how to unbind variables and functions in Emacs Lisp?
+:PROPERTIES:
+:ONE: minibuffer-one-episode
+:CUSTOM_ID: /2023-09-29-do-you-know-how-to-unbind-variables-and-functions-in-emacs-lisp/
+:MINIBUFFER_CREATED_AT: [2023-09-29 Fri]
+:MINIBUFFER_YOUTUBE_LINK: https://www.youtube.com/watch?v=qP5CBbqQGHk
+:END:
+
+#+BEGIN_SRC emacs-lisp
+(setq foo "foo")
+foo
+(makunbound 'foo)
+foo
+
+(defun bar () "bar")
+(bar)
+(fmakunbound 'bar)
+(bar)
+#+END_SRC
