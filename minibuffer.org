@@ -937,3 +937,19 @@ foo
 (fmakunbound 'bar)
 (bar)
 #+END_SRC
+
+* How to create a temporary file in Emacs Lisp?
+:PROPERTIES:
+:ONE: minibuffer-one-episode
+:CUSTOM_ID: /2023-09-30-how-to-create-a-temporary-file-in-emacs-lisp/
+:MINIBUFFER_CREATED_AT: [2023-09-30 Sat]
+:MINIBUFFER_YOUTUBE_LINK: https://www.youtube.com/watch?v=QUhuPGN_o1k
+:END:
+
+#+BEGIN_SRC emacs-lisp
+(make-temp-file "foo-") ;; "/tmp/foo-BaXkII"
+
+(let ((file (make-temp-file "foo-")))
+  (write-region "foo bar baz" nil file)
+  (find-file file))
+#+END_SRC
