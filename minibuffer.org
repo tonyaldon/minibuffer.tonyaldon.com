@@ -953,3 +953,18 @@ foo
   (write-region "foo bar baz" nil file)
   (find-file file))
 #+END_SRC
+
+* How to evaluate an expression in Emacs Lisp? (for beginners)
+:PROPERTIES:
+:ONE: minibuffer-one-episode
+:CUSTOM_ID: /2023-10-01-how-to-evaluate-an-expression-in-emacs-lisp-for-beginners/
+:MINIBUFFER_CREATED_AT: [2023-10-01 Sun]
+:MINIBUFFER_YOUTUBE_LINK: https://www.youtube.com/watch?v=QG9G_dh20Tg
+:END:
+
+#+BEGIN_SRC emacs-lisp
+;; eval-expression
+(buffer-name)
+(insert "notes.el")
+(insert "foo")
+#+END_SRC
