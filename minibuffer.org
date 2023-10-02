@@ -968,3 +968,30 @@ foo
 (insert "notes.el")
 (insert "foo")
 #+END_SRC
+
+* Do you inferior-emacs-lisp-mode for playing with Emacs Lisp?
+:PROPERTIES:
+:ONE: minibuffer-one-episode
+:CUSTOM_ID: /2023-10-02-do-you-inferior-emacs-lisp-mode-for-playing-with-emacs-lisp/
+:MINIBUFFER_CREATED_AT: [2023-10-02 Mon]
+:MINIBUFFER_YOUTUBE_LINK: https://www.youtube.com/watch?v=B9anqg6o23M
+:END:
+
+#+BEGIN_SRC text
+,*** Welcome to IELM ***  Type (describe-mode) for help.
+ELISP> (+ 1 1)
+2 (#o2, #x2, ?\C-b)
+ELISP> (setq foo "bar")
+"bar"
+ELISP> foo
+"bar"
+ELISP> (defun foo () 1)
+foo
+ELISP> (foo)
+1 (#o1, #x1, ?\C-a)
+ELISP> (defun foo () "foo bar baz")
+foo
+ELISP> (foo)
+"foo bar baz"
+ELISP>
+#+END_SRC
