@@ -999,3 +999,16 @@ ELISP> (foo)
 "foo bar baz"
 ELISP>
 #+END_SRC
+
+* Do you kwow how to generate ISO 8601 dates in Emacs Lisp?
+:PROPERTIES:
+:ONE: minibuffer-one-episode
+:CUSTOM_ID: /2023-10-03-do-you-kwow-how-to-generate-iso-8601-dates-in-emacs-lisp/
+:MINIBUFFER_CREATED_AT: [2023-10-03 Tue]
+:MINIBUFFER_YOUTUBE_LINK: https://www.youtube.com/watch?v=RTs1IhRiKXI
+:END:
+
+#+BEGIN_SRC emacs-lisp
+(format-time-string "%FT%T%z") ;; "2023-10-03T18:35:07+0200"
+(format-time-string "%FT%T%z" nil "UTC") ;; "2023-10-03T16:35:38+0000"
+#+END_SRC
