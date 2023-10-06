@@ -1027,3 +1027,41 @@ ELISP>
 ;; eval-expression
 ;; pp-eval-expression
 #+END_SRC
+
+* How to manipulate property lists in Emacs Lisp?
+:PROPERTIES:
+:ONE: minibuffer-one-episode
+:CUSTOM_ID: /2023-10-05-how-to-manipulate-property-lists-in-emacs-lisp/
+:MINIBUFFER_CREATED_AT: [2023-10-05 Thu]
+:MINIBUFFER_YOUTUBE_LINK: https://www.youtube.com/watch?v=bFElWA9WPW0
+:END:
+
+#+BEGIN_SRC emacs-lisp
+(plist-get '(:a 1 :b 2 :c 3) :c) ;; 3
+(plist-get '(:a 1 :b 2 :a 3) :a) ;; 1
+
+(plist-member '(:a 1 :b 2 :c 3) :b) ;; (:b 2 :c 3)
+
+(plist-get '(:a 1 :b 2) :c) ;; nil
+(plist-get '(:a 1 :b 2 :c nil) :c) ;; nil
+(plist-member '(:a 1 :b 2) :c) ;; nil
+(plist-member '(:a 1 :b 2 :c nil) :c) ;; (:c nil)
+#+END_SRC
+
+* How to change values in Emacs Lisp property lists?
+:PROPERTIES:
+:ONE: minibuffer-one-episode
+:CUSTOM_ID: /2023-10-06-how-to-change-values-in-emacs-lisp-property-lists/
+:MINIBUFFER_CREATED_AT: [2023-10-06 Fri]
+:MINIBUFFER_YOUTUBE_LINK: https://www.youtube.com/watch?v=AZiSsLG4HWk
+:END:
+
+#+BEGIN_SRC emacs-lisp
+(plist-put '(:a 1 :b 2) :a 10) ;; (:a 10 :b 2)
+(plist-put '(:a 1 :b 2 :a 3) :a 10) ;; (:a 10 :b 2 :a 3)
+
+(let ((foo '(:a 1 :b 2)))
+  (plist-put foo :a 10)
+  foo)
+;; (:a 10 :b 2)
+#+END_SRC
