@@ -1,0 +1,187 @@
+<!DOCTYPE html><html lang="en"><head><meta name="viewport" content="width=device-width,initial-scale=1" /><meta name="description" content="Learn Emacs Lisp One Sexp At A Time." /><link rel="stylesheet" type="text/css" href="/main.css" /><title>How to copy the content of a directory in Emacs Lisp?</title></head><body><div id="minibuffer">minibuffer</div><div id="content"><div id="header"><a href="/"><div id="minibuffer">minibuffer</div></a></div><a href="#"><div id="scroll-to-top"><svg id="chevron-top" viewBox="0 0 32 32"><path d="M15.997 13.374l-7.081 7.081L7 18.54l8.997-8.998 9.003 9-1.916 1.916z"></path></svg></div></a><div id="columns"><div id="primary"><iframe src="https://www.youtube.com/embed/WzGdxuKCups?&amp;fs=1&amp;modestbranding=1&amp;rel=0&amp;widget_referrer=https://minibuffer.tonyaldon.com" title="YouTube video player playing How to copy the content of a directory in Emacs Lisp?" frameborder="0" allow="fullscreen;accelerometer;autoplay;clipboard-write;encrypted-media;gyroscope;picture-in-picture;web-share"></iframe><h1>How to copy the content of a directory in Emacs Lisp?</h1><div class="date" style="text-align:center; margin-bottom:16px;">October 07, 2023</div><div><pre><code class="one-hl one-hl-block">(copy-directory <span class="one-hl-string">"./foo/"</span> <span class="one-hl-string">"./bar/"</span>)
+(copy-directory <span class="one-hl-string">"./foo/"</span> <span class="one-hl-string">"./bar/baz/"</span> nil t)
+(copy-directory <span class="one-hl-string">"./foo/"</span> <span class="one-hl-string">"./bar/"</span> nil t t)</code></pre>
+
+<pre><code class="one-hl one-hl-block"><span class="one-hl-tms-ps1-user-host">&#9673; tony@tony</span>:<span class="one-hl-tms-ps1-directory">~/minibuffer</span>:
+$ <span class="one-hl-tms-cmd-line">tree</span>
+.
+&#9500;&#9472;&#9472; bar
+&#9500;&#9472;&#9472; foo
+&#9474;   &#9500;&#9472;&#9472; foo-1
+&#9474;   &#9500;&#9472;&#9472; foo-2
+&#9474;   &#9500;&#9472;&#9472; foo-3
+&#9474;   &#9492;&#9472;&#9472; foo-dir
+&#9492;&#9472;&#9472; notes.el
+
+3 directories, 4 files
+<span class="one-hl-tms-ps1-user-host">&#9673; tony@tony</span>:<span class="one-hl-tms-ps1-directory">~/minibuffer</span>:
+$ <span class="one-hl-tms-cmd-line">cp -r foo/* bar/</span>
+<span class="one-hl-tms-ps1-user-host">&#9673; tony@tony</span>:<span class="one-hl-tms-ps1-directory">~/minibuffer</span>:
+$ <span class="one-hl-tms-cmd-line">tree</span>
+.
+&#9500;&#9472;&#9472; bar
+&#9474;   &#9500;&#9472;&#9472; foo-1
+&#9474;   &#9500;&#9472;&#9472; foo-2
+&#9474;   &#9500;&#9472;&#9472; foo-3
+&#9474;   &#9492;&#9472;&#9472; foo-dir
+&#9500;&#9472;&#9472; foo
+&#9474;   &#9500;&#9472;&#9472; foo-1
+&#9474;   &#9500;&#9472;&#9472; foo-2
+&#9474;   &#9500;&#9472;&#9472; foo-3
+&#9474;   &#9492;&#9472;&#9472; foo-dir
+&#9492;&#9472;&#9472; notes.el
+
+4 directories, 7 files
+<span class="one-hl-tms-ps1-user-host">&#9673; tony@tony</span>:<span class="one-hl-tms-ps1-directory">~/minibuffer</span>:
+$ <span class="one-hl-tms-cmd-line">rm -r bar/*</span>
+<span class="one-hl-tms-ps1-user-host">&#9673; tony@tony</span>:<span class="one-hl-tms-ps1-directory">~/minibuffer</span>:
+$ <span class="one-hl-tms-cmd-line">tree</span>
+.
+&#9500;&#9472;&#9472; bar
+&#9474;   &#9492;&#9472;&#9472; foo
+&#9474;       &#9500;&#9472;&#9472; foo-1
+&#9474;       &#9500;&#9472;&#9472; foo-2
+&#9474;       &#9500;&#9472;&#9472; foo-3
+&#9474;       &#9492;&#9472;&#9472; foo-dir
+&#9500;&#9472;&#9472; foo
+&#9474;   &#9500;&#9472;&#9472; foo-1
+&#9474;   &#9500;&#9472;&#9472; foo-2
+&#9474;   &#9500;&#9472;&#9472; foo-3
+&#9474;   &#9492;&#9472;&#9472; foo-dir
+&#9492;&#9472;&#9472; notes.el
+
+5 directories, 7 files
+<span class="one-hl-tms-ps1-user-host">&#9673; tony@tony</span>:<span class="one-hl-tms-ps1-directory">~/minibuffer</span>:
+$ <span class="one-hl-tms-cmd-line">tree</span>
+.
+&#9500;&#9472;&#9472; bar
+&#9474;   &#9500;&#9472;&#9472; baz
+&#9474;   &#9474;   &#9492;&#9472;&#9472; foo
+&#9474;   &#9474;       &#9500;&#9472;&#9472; foo-1
+&#9474;   &#9474;       &#9500;&#9472;&#9472; foo-2
+&#9474;   &#9474;       &#9500;&#9472;&#9472; foo-3
+&#9474;   &#9474;       &#9492;&#9472;&#9472; foo-dir
+&#9474;   &#9492;&#9472;&#9472; foo
+&#9474;       &#9500;&#9472;&#9472; foo-1
+&#9474;       &#9500;&#9472;&#9472; foo-2
+&#9474;       &#9500;&#9472;&#9472; foo-3
+&#9474;       &#9492;&#9472;&#9472; foo-dir
+&#9500;&#9472;&#9472; foo
+&#9474;   &#9500;&#9472;&#9472; foo-1
+&#9474;   &#9500;&#9472;&#9472; foo-2
+&#9474;   &#9500;&#9472;&#9472; foo-3
+&#9474;   &#9492;&#9472;&#9472; foo-dir
+&#9492;&#9472;&#9472; notes.el
+
+8 directories, 10 files
+<span class="one-hl-tms-ps1-user-host">&#9673; tony@tony</span>:<span class="one-hl-tms-ps1-directory">~/minibuffer</span>:
+$ <span class="one-hl-tms-cmd-line">tree</span>
+.
+&#9500;&#9472;&#9472; bar
+&#9474;   &#9500;&#9472;&#9472; baz
+&#9474;   &#9474;   &#9492;&#9472;&#9472; foo
+&#9474;   &#9474;       &#9500;&#9472;&#9472; foo-1
+&#9474;   &#9474;       &#9500;&#9472;&#9472; foo-2
+&#9474;   &#9474;       &#9500;&#9472;&#9472; foo-3
+&#9474;   &#9474;       &#9492;&#9472;&#9472; foo-dir
+&#9474;   &#9500;&#9472;&#9472; foo
+&#9474;   &#9474;   &#9500;&#9472;&#9472; foo-1
+&#9474;   &#9474;   &#9500;&#9472;&#9472; foo-2
+&#9474;   &#9474;   &#9500;&#9472;&#9472; foo-3
+&#9474;   &#9474;   &#9492;&#9472;&#9472; foo-dir
+&#9474;   &#9500;&#9472;&#9472; foo-1
+&#9474;   &#9500;&#9472;&#9472; foo-2
+&#9474;   &#9500;&#9472;&#9472; foo-3
+&#9474;   &#9492;&#9472;&#9472; foo-dir
+&#9500;&#9472;&#9472; foo
+&#9474;   &#9500;&#9472;&#9472; foo-1
+&#9474;   &#9500;&#9472;&#9472; foo-2
+&#9474;   &#9500;&#9472;&#9472; foo-3
+&#9474;   &#9492;&#9472;&#9472; foo-dir
+&#9492;&#9472;&#9472; notes.el
+
+9 directories, 13 files
+<span class="one-hl-tms-ps1-user-host">&#9673; tony@tony</span>:<span class="one-hl-tms-ps1-directory">~/minibuffer</span>:
+$ <span class="one-hl-tms-cmd-line">rm -r bar/*</span>
+<span class="one-hl-tms-ps1-user-host">&#9673; tony@tony</span>:<span class="one-hl-tms-ps1-directory">~/minibuffer</span>:
+$ <span class="one-hl-tms-cmd-line">tree</span>
+.
+&#9500;&#9472;&#9472; bar
+&#9474;   &#9492;&#9472;&#9472; foo
+&#9474;       &#9500;&#9472;&#9472; foo-1
+&#9474;       &#9500;&#9472;&#9472; foo-2
+&#9474;       &#9500;&#9472;&#9472; foo-3
+&#9474;       &#9492;&#9472;&#9472; foo-dir
+&#9500;&#9472;&#9472; foo
+&#9474;   &#9500;&#9472;&#9472; foo-1
+&#9474;   &#9500;&#9472;&#9472; foo-2
+&#9474;   &#9500;&#9472;&#9472; foo-3
+&#9474;   &#9492;&#9472;&#9472; foo-dir
+&#9500;&#9472;&#9472; #notes.el#
+&#9492;&#9472;&#9472; notes.el
+
+5 directories, 8 files
+<span class="one-hl-tms-ps1-user-host">&#9673; tony@tony</span>:<span class="one-hl-tms-ps1-directory">~/minibuffer</span>:
+$ <span class="one-hl-tms-cmd-line">tree</span>
+.
+&#9500;&#9472;&#9472; bar
+&#9474;   &#9500;&#9472;&#9472; baz
+&#9474;   &#9474;   &#9492;&#9472;&#9472; foo
+&#9474;   &#9474;       &#9500;&#9472;&#9472; foo-1
+&#9474;   &#9474;       &#9500;&#9472;&#9472; foo-2
+&#9474;   &#9474;       &#9500;&#9472;&#9472; foo-3
+&#9474;   &#9474;       &#9492;&#9472;&#9472; foo-dir
+&#9474;   &#9492;&#9472;&#9472; foo
+&#9474;       &#9500;&#9472;&#9472; foo-1
+&#9474;       &#9500;&#9472;&#9472; foo-2
+&#9474;       &#9500;&#9472;&#9472; foo-3
+&#9474;       &#9492;&#9472;&#9472; foo-dir
+&#9500;&#9472;&#9472; foo
+&#9474;   &#9500;&#9472;&#9472; foo-1
+&#9474;   &#9500;&#9472;&#9472; foo-2
+&#9474;   &#9500;&#9472;&#9472; foo-3
+&#9474;   &#9492;&#9472;&#9472; foo-dir
+&#9500;&#9472;&#9472; #notes.el#
+&#9492;&#9472;&#9472; notes.el
+
+8 directories, 11 files
+<span class="one-hl-tms-ps1-user-host">&#9673; tony@tony</span>:<span class="one-hl-tms-ps1-directory">~/minibuffer</span>:
+$ <span class="one-hl-tms-cmd-line">rm -r bar/*</span>
+<span class="one-hl-tms-ps1-user-host">&#9673; tony@tony</span>:<span class="one-hl-tms-ps1-directory">~/minibuffer</span>:
+$ <span class="one-hl-tms-cmd-line">tree</span>
+.
+&#9500;&#9472;&#9472; bar
+&#9474;   &#9500;&#9472;&#9472; foo-1
+&#9474;   &#9500;&#9472;&#9472; foo-2
+&#9474;   &#9500;&#9472;&#9472; foo-3
+&#9474;   &#9492;&#9472;&#9472; foo-dir
+&#9500;&#9472;&#9472; foo
+&#9474;   &#9500;&#9472;&#9472; foo-1
+&#9474;   &#9500;&#9472;&#9472; foo-2
+&#9474;   &#9500;&#9472;&#9472; foo-3
+&#9474;   &#9492;&#9472;&#9472; foo-dir
+&#9500;&#9472;&#9472; #notes.el#
+&#9492;&#9472;&#9472; notes.el
+
+4 directories, 8 files</code></pre>
+</div>
+<div class="nav"><a href="/2023-10-06-how-to-change-values-in-emacs-lisp-property-lists/">PREV</a><a href="/2023-09-22-how-to-check-that-we-have-reached-the-end-of-buffer-in-emacs-lisp/">RANDOM</a></div><div id="footer"><div>Twitter: <a href="https://twitter.com/tonyaldon">@tonyaldon</a> | Email: <a href="mailto:tony@tonyaldon.com">tony@tonyaldon.com</a> | RSS: <a href="/feed.xml">feed.xml</a></div><div>© 2023 Tony Aldon.  All rights reserved.</div></div></div><div id="secondary"><div id="items"><div class="item"><a href="/2023-09-28-do-you-know-how-to-list-org-mode-source-blocks-with-emacs-lisp/"><div class="thumbnail"><img src="/img/2023-09-28-thumbnail.webp" alt="Do you know how to list org-mode source blocks with Emacs Lisp?" width="168px" height="94px" /></div><div class="details"><h4>Do you know how to list org-mode source blocks with Emacs Lisp?</h4><div class="date">September 28, 2023</div></div></a></div><div class="item"><a href="/2023-09-26-how-to-throw-and-test-errors-in-emacs-lisp/"><div class="thumbnail"><img src="/img/2023-09-26-thumbnail.webp" alt="How to throw and test errors in Emacs Lisp?" width="168px" height="94px" /></div><div class="details"><h4>How to throw and test errors in Emacs Lisp?</h4><div class="date">September 26, 2023</div></div></a></div><div class="item"><a href="/2023-09-16-how-to-select-a-word-in-a-list-with-minibuffer-completion-in-emacs-lisp/"><div class="thumbnail"><img src="/img/2023-09-16-thumbnail.webp" alt="How to select a word in a list with minibuffer completion in Emacs Lisp?" width="168px" height="94px" /></div><div class="details"><h4>How to select a word in a list with minibuffer completion in Emacs Lisp?</h4><div class="date">September 16, 2023</div></div></a></div><div class="item"><a href="/2023-09-11-how-to-start-a-shell-in-a-window-below-in-emacs-lisp/"><div class="thumbnail"><img src="/img/2023-09-11-thumbnail.webp" alt="How to start a shell in a window below in Emacs Lisp?" width="168px" height="94px" /></div><div class="details"><h4>How to start a shell in a window below in Emacs Lisp?</h4><div class="date">September 11, 2023</div></div></a></div><div class="item"><a href="/2023-09-13-how-to-stop-displaying-calls-to-message-in-emacs-lisp/"><div class="thumbnail"><img src="/img/2023-09-13-thumbnail.webp" alt="How to stop displaying calls to message in Emacs Lisp?" width="168px" height="94px" /></div><div class="details"><h4>How to stop displaying calls to message in Emacs Lisp?</h4><div class="date">September 13, 2023</div></div></a></div><div class="item"><a href="/2023-09-22-how-to-check-that-we-have-reached-the-end-of-buffer-in-emacs-lisp/"><div class="thumbnail"><img src="/img/2023-09-22-thumbnail.webp" alt="How to check that we have reached the end of buffer in Emacs Lisp?" width="168px" height="94px" /></div><div class="details"><h4>How to check that we have reached the end of buffer in Emacs Lisp?</h4><div class="date">September 22, 2023</div></div></a></div><div class="item"><a href="/2023-08-27-how-to-insert-foo-at-the-end-of-buffer-without-changing-point-with-emacs-lisp/"><div class="thumbnail"><img src="/img/2023-08-27-thumbnail.webp" alt="How to insert foo at the end of buffer without changing point with Emacs Lisp?" width="168px" height="94px" /></div><div class="details"><h4>How to insert foo at the end of buffer without changing point with Emacs Lisp?</h4><div class="date">August 27, 2023</div></div></a></div><div class="item"><a href="/2023-10-03-do-you-kwow-how-to-generate-iso-8601-dates-in-emacs-lisp/"><div class="thumbnail"><img src="/img/2023-10-03-thumbnail.webp" alt="Do you kwow how to generate ISO 8601 dates in Emacs Lisp?" width="168px" height="94px" /></div><div class="details"><h4>Do you kwow how to generate ISO 8601 dates in Emacs Lisp?</h4><div class="date">October 03, 2023</div></div></a></div><div class="item"><a href="/2023-08-25-how-to-add-html-attributes-with-the-emacs-package-jack/"><div class="thumbnail"><img src="/img/2023-08-25-thumbnail.webp" alt="How to add html attributes with the Emacs package Jack?" width="168px" height="94px" /></div><div class="details"><h4>How to add html attributes with the Emacs package Jack?</h4><div class="date">August 25, 2023</div></div></a></div><div class="item"><a href="/2023-09-21-how-to-define-a-command-that-works-on-the-selected-region-in-emacs-lisp/"><div class="thumbnail"><img src="/img/2023-09-21-thumbnail.webp" alt="How to define a command that works on the selected region in Emacs Lisp?" width="168px" height="94px" /></div><div class="details"><h4>How to define a command that works on the selected region in Emacs Lisp?</h4><div class="date">September 21, 2023</div></div></a></div><div class="item"><a href="/2023-09-29-do-you-know-how-to-unbind-variables-and-functions-in-emacs-lisp/"><div class="thumbnail"><img src="/img/2023-09-29-thumbnail.webp" alt="Do you know how to unbind variables and functions in Emacs Lisp?" width="168px" height="94px" /></div><div class="details"><h4>Do you know how to unbind variables and functions in Emacs Lisp?</h4><div class="date">September 29, 2023</div></div></a></div><div class="item"><a href="/2023-09-30-how-to-create-a-temporary-file-in-emacs-lisp/"><div class="thumbnail"><img src="/img/2023-09-30-thumbnail.webp" alt="How to create a temporary file in Emacs Lisp?" width="168px" height="94px" /></div><div class="details"><h4>How to create a temporary file in Emacs Lisp?</h4><div class="date">September 30, 2023</div></div></a></div><div class="item"><a href="/2023-09-19-do-you-know-about-the-emacs-lisp-function-split-line/"><div class="thumbnail"><img src="/img/2023-09-19-thumbnail.webp" alt="Do you know about the Emacs Lisp function split-line?" width="168px" height="94px" /></div><div class="details"><h4>Do you know about the Emacs Lisp function split-line?</h4><div class="date">September 19, 2023</div></div></a></div><div class="item"><a href="/2023-09-04-how-to-manipulate-the-match-data-in-emacs-lisp/"><div class="thumbnail"><img src="/img/2023-09-04-thumbnail.webp" alt="How to manipulate the match data in Emacs Lisp?" width="168px" height="94px" /></div><div class="details"><h4>How to manipulate the match data in Emacs Lisp?</h4><div class="date">September 04, 2023</div></div></a></div><div class="item"><a href="/2023-09-09-how-to-run-a-unix-utility-on-file-at-point-in-dired-in-emacs-lisp/"><div class="thumbnail"><img src="/img/2023-09-09-thumbnail.webp" alt="How to run a unix utility on file at point in dired in Emacs Lisp?" width="168px" height="94px" /></div><div class="details"><h4>How to run a unix utility on file at point in dired in Emacs Lisp?</h4><div class="date">September 09, 2023</div></div></a></div><div class="item"><a href="/2023-10-01-how-to-evaluate-an-expression-in-emacs-lisp-for-beginners/"><div class="thumbnail"><img src="/img/2023-10-01-thumbnail.webp" alt="How to evaluate an expression in Emacs Lisp? (for beginners)" width="168px" height="94px" /></div><div class="details"><h4>How to evaluate an expression in Emacs Lisp? (for beginners)</h4><div class="date">October 01, 2023</div></div></a></div><div class="item"><a href="/2023-09-01-how-to-replace-regexp-in-buffers-in-emacs-lisp/"><div class="thumbnail"><img src="/img/2023-09-01-thumbnail.webp" alt="How to replace regexp in buffers in Emacs Lisp?" width="168px" height="94px" /></div><div class="details"><h4>How to replace regexp in buffers in Emacs Lisp?</h4><div class="date">September 01, 2023</div></div></a></div><div class="item"><a href="/2023-08-29-how-to-turn-a-function-into-a-command-in-emacs-lisp/"><div class="thumbnail"><img src="/img/2023-08-29-thumbnail.webp" alt="How to turn a function into a command in Emacs Lisp?" width="168px" height="94px" /></div><div class="details"><h4>How to turn a function into a command in Emacs Lisp?</h4><div class="date">August 29, 2023</div></div></a></div><div class="item"><a href="/2023-08-28-how-to-check-for-the-states-of-buffer-local-variables-in-emacs-lisp/"><div class="thumbnail"><img src="/img/2023-08-28-thumbnail.webp" alt="How to check for the states of buffer-local variables in Emacs Lisp?" width="168px" height="94px" /></div><div class="details"><h4>How to check for the states of buffer-local variables in Emacs Lisp?</h4><div class="date">August 28, 2023</div></div></a></div><div class="item"><a href="/2023-08-26-how-to-check-for-a-regexp-match-after-point-with-emacs-lisp/"><div class="thumbnail"><img src="/img/2023-08-26-thumbnail.webp" alt="How to check for a regexp match after point with Emacs Lisp?" width="168px" height="94px" /></div><div class="details"><h4>How to check for a regexp match after point with Emacs Lisp?</h4><div class="date">August 26, 2023</div></div></a></div><div class="item"><a href="/2023-09-24-how-to-run-some-emacs-lisp-code-in-batch-mode-2/"><div class="thumbnail"><img src="/img/2023-09-24-thumbnail.webp" alt="How to run some Emacs Lisp code in batch mode #2?" width="168px" height="94px" /></div><div class="details"><h4>How to run some Emacs Lisp code in batch mode #2?</h4><div class="date">September 24, 2023</div></div></a></div><div class="item"><a href="/2023-08-24-do-you-know-how-to-generate-html-strings-with-emacs-lisp/"><div class="thumbnail"><img src="/img/2023-08-24-thumbnail.webp" alt="Do you know how to generate html strings with Emacs Lisp?" width="168px" height="94px" /></div><div class="details"><h4>Do you know how to generate html strings with Emacs Lisp?</h4><div class="date">August 24, 2023</div></div></a></div><div class="item"><a href="/2023-10-06-how-to-change-values-in-emacs-lisp-property-lists/"><div class="thumbnail"><img src="/img/2023-10-06-thumbnail.webp" alt="How to change values in Emacs Lisp property lists?" width="168px" height="94px" /></div><div class="details"><h4>How to change values in Emacs Lisp property lists?</h4><div class="date">October 06, 2023</div></div></a></div><div class="item"><a href="/2023-09-05-how-to-replace-regexp-in-buffers-in-emacs-lisp-with-a-while-loop/"><div class="thumbnail"><img src="/img/2023-09-05-thumbnail.webp" alt="How to replace regexp in buffers in Emacs Lisp?" width="168px" height="94px" /></div><div class="details"><h4>How to replace regexp in buffers in Emacs Lisp?</h4><div class="date">September 05, 2023</div></div></a></div><div class="item"><a href="/2023-09-03-what-influence-does-case-fold-search-have-on-searches-in-emacs-lisp/"><div class="thumbnail"><img src="/img/2023-09-03-thumbnail.webp" alt="What influence does case-fold-search have on searches in Emacs Lisp?" width="168px" height="94px" /></div><div class="details"><h4>What influence does case-fold-search have on searches in Emacs Lisp?</h4><div class="date">September 03, 2023</div></div></a></div><div class="item"><a href="/2023-09-20-how-to-make-emacs-unusable-using-the-hook-post-self-insert-hook/"><div class="thumbnail"><img src="/img/2023-09-20-thumbnail.webp" alt="How to make Emacs unusable using the hook post-self-insert-hook?" width="168px" height="94px" /></div><div class="details"><h4>How to make Emacs unusable using the hook post-self-insert-hook?</h4><div class="date">September 20, 2023</div></div></a></div><div class="item"><a href="/2023-09-14-how-to-save-and-restore-the-selected-window-in-emacs-lisp/"><div class="thumbnail"><img src="/img/2023-09-14-thumbnail.webp" alt="How to save and restore the selected window in Emacs Lisp?" width="168px" height="94px" /></div><div class="details"><h4>How to save and restore the selected window in Emacs Lisp?</h4><div class="date">September 14, 2023</div></div></a></div><div class="item"><a href="/2023-09-06-how-to-get-the-content-in-buffers-in-emacs-lisp/"><div class="thumbnail"><img src="/img/2023-09-06-thumbnail.webp" alt="How to get the content in buffers in Emacs Lisp?" width="168px" height="94px" /></div><div class="details"><h4>How to get the content in buffers in Emacs Lisp?</h4><div class="date">September 06, 2023</div></div></a></div><div class="item"><a href="/2023-09-27-what-does-org-parsed-tree-look-like-in-emacs-lisp/"><div class="thumbnail"><img src="/img/2023-09-27-thumbnail.webp" alt="What does Org parsed tree look like in Emacs Lisp?" width="168px" height="94px" /></div><div class="details"><h4>What does Org parsed tree look like in Emacs Lisp?</h4><div class="date">September 27, 2023</div></div></a></div><div class="item"><a href="/2023-08-23-how-to-put-the-value-of-an-org-property-in-the-kill-ring/"><div class="thumbnail"><img src="/img/2023-08-23-thumbnail.webp" alt="How to put the value of an Org property in the kill-ring?" width="168px" height="94px" /></div><div class="details"><h4>How to put the value of an Org property in the kill-ring?</h4><div class="date">August 23, 2023</div></div></a></div><div class="item"><a href="/2023-09-10-how-to-copy-the-current-line-below-in-emacs-lisp/"><div class="thumbnail"><img src="/img/2023-09-10-thumbnail.webp" alt="How to copy the current line below in Emacs Lisp?" width="168px" height="94px" /></div><div class="details"><h4>How to copy the current line below in Emacs Lisp?</h4><div class="date">September 10, 2023</div></div></a></div><div class="item"><a href="/2023-10-05-how-to-manipulate-property-lists-in-emacs-lisp/"><div class="thumbnail"><img src="/img/2023-10-05-thumbnail.webp" alt="How to manipulate property lists in Emacs Lisp?" width="168px" height="94px" /></div><div class="details"><h4>How to manipulate property lists in Emacs Lisp?</h4><div class="date">October 05, 2023</div></div></a></div><div class="item"><a href="/2023-09-07-how-to-manipulate-vectors-in-emacs-lisp/"><div class="thumbnail"><img src="/img/2023-09-07-thumbnail.webp" alt="How to manipulate vectors in Emacs Lisp?" width="168px" height="94px" /></div><div class="details"><h4>How to manipulate vectors in Emacs Lisp?</h4><div class="date">September 07, 2023</div></div></a></div><div class="item"><a href="/2023-08-31-how-to-list-files-in-a-given-directory-in-emacs-lisp/"><div class="thumbnail"><img src="/img/2023-08-31-thumbnail.webp" alt="How to list files in a given directory in Emacs Lisp?" width="168px" height="94px" /></div><div class="details"><h4>How to list files in a given directory in Emacs Lisp?</h4><div class="date">August 31, 2023</div></div></a></div><div class="item"><a href="/2023-09-08-how-to-swap-elements-in-vectors-in-emacs-lisp/"><div class="thumbnail"><img src="/img/2023-09-08-thumbnail.webp" alt="How to swap elements in vectors in Emacs Lisp?" width="168px" height="94px" /></div><div class="details"><h4>How to swap elements in vectors in Emacs Lisp?</h4><div class="date">September 08, 2023</div></div></a></div><div class="item"><a href="/2023-10-07-how-to-copy-the-content-of-a-directory-in-emacs-lisp/"><div class="thumbnail"><img src="/img/2023-10-07-thumbnail.webp" alt="How to copy the content of a directory in Emacs Lisp?" width="168px" height="94px" /></div><div class="details"><h4>How to copy the content of a directory in Emacs Lisp?</h4><div class="date">October 07, 2023</div></div></a></div><div class="item"><a href="/2023-09-12-how-to-move-the-point-around-in-buffers-in-emacs-lisp/"><div class="thumbnail"><img src="/img/2023-09-12-thumbnail.webp" alt="How to move the point around in buffers in Emacs Lisp?" width="168px" height="94px" /></div><div class="details"><h4>How to move the point around in buffers in Emacs Lisp?</h4><div class="date">September 12, 2023</div></div></a></div><div class="item"><a href="/2023-10-04-what-commands-do-you-use-to-evaluate-emacs-lisp-expression/"><div class="thumbnail"><img src="/img/2023-10-04-thumbnail.webp" alt="What commands do you use to evaluate Emacs Lisp expressions?" width="168px" height="94px" /></div><div class="details"><h4>What commands do you use to evaluate Emacs Lisp expressions?</h4><div class="date">October 04, 2023</div></div></a></div><div class="item"><a href="/2023-09-23-how-to-run-some-emacs-lisp-code-in-batch-mode/"><div class="thumbnail"><img src="/img/2023-09-23-thumbnail.webp" alt="How to run some Emacs Lisp code in batch mode?" width="168px" height="94px" /></div><div class="details"><h4>How to run some Emacs Lisp code in batch mode?</h4><div class="date">September 23, 2023</div></div></a></div><div class="item"><a href="/2023-08-22-how-to-match-47-characters-in-a-string-with-emacs-lisp/"><div class="thumbnail"><img src="/img/2023-08-22-thumbnail.webp" alt="How to match 47 characters in a string with Emacs Lisp?" width="168px" height="94px" /></div><div class="details"><h4>How to match 47 characters in a string with Emacs Lisp?</h4><div class="date">August 22, 2023</div></div></a></div><div class="item"><a href="/2023-09-02-how-to-search-for-regexp-in-buffers-in-emacs-lisp/"><div class="thumbnail"><img src="/img/2023-09-02-thumbnail.webp" alt="How to search for regexp in buffers in Emacs Lisp?" width="168px" height="94px" /></div><div class="details"><h4>How to search for regexp in buffers in Emacs Lisp?</h4><div class="date">September 02, 2023</div></div></a></div><div class="item"><a href="/2023-09-17-how-to-write-buffer-region-into-a-file-in-emacs-lisp/"><div class="thumbnail"><img src="/img/2023-09-17-thumbnail.webp" alt="How to write buffer region into a file in Emacs Lisp?" width="168px" height="94px" /></div><div class="details"><h4>How to write buffer region into a file in Emacs Lisp?</h4><div class="date">September 17, 2023</div></div></a></div><div class="item"><a href="/2023-09-25-how-to-write-tests-in-emacs-lisp/"><div class="thumbnail"><img src="/img/2023-09-25-thumbnail.webp" alt="How to write tests in Emacs Lisp?" width="168px" height="94px" /></div><div class="details"><h4>How to write tests in Emacs Lisp?</h4><div class="date">September 25, 2023</div></div></a></div><div class="item"><a href="/2023-10-02-do-you-inferior-emacs-lisp-mode-for-playing-with-emacs-lisp/"><div class="thumbnail"><img src="/img/2023-10-02-thumbnail.webp" alt="Do you know inferior-emacs-lisp-mode for playing with Emacs Lisp?" width="168px" height="94px" /></div><div class="details"><h4>Do you know inferior-emacs-lisp-mode for playing with Emacs Lisp?</h4><div class="date">October 02, 2023</div></div></a></div><div class="item"><a href="/2023-09-15-how-to-loop-over-the-window-list-of-the-selected-frame-in-emacs-lisp/"><div class="thumbnail"><img src="/img/2023-09-15-thumbnail.webp" alt="How to loop over the window list of the selected frame in Emacs Lisp?" width="168px" height="94px" /></div><div class="details"><h4>How to loop over the window list of the selected frame in Emacs Lisp?</h4><div class="date">September 15, 2023</div></div></a></div><div class="item"><a href="/2023-09-18-how-to-display-the-documentation-of-the-symbol-at-point-emacs-lisp/"><div class="thumbnail"><img src="/img/2023-09-18-thumbnail.webp" alt="How to display the documentation of the symbol at point Emacs Lisp?" width="168px" height="94px" /></div><div class="details"><h4>How to display the documentation of the symbol at point Emacs Lisp?</h4><div class="date">September 18, 2023</div></div></a></div><div class="item"><a href="/2023-08-30-how-to-insert-strings-in-a-given-buffer-in-emacs-lisp/"><div class="thumbnail"><img src="/img/2023-08-30-thumbnail.webp" alt="How to insert strings in a given buffer in Emacs Lisp?" width="168px" height="94px" /></div><div class="details"><h4>How to insert strings in a given buffer in Emacs Lisp?</h4><div class="date">August 30, 2023</div></div></a></div></div></div></div></div><script>
+function toggleElementsOnScroll(e) {
+  if (this.oldScroll === undefined || this.oldScroll > this.scrollY) {
+    // scroll up
+    document.getElementById('header').style.height = '3.5rem';
+    document.getElementById('scroll-to-top').style.height = '3.5rem';
+  } else {
+    // scroll down
+    console.log('foo');
+    document.getElementById('header').style.height = '0';
+    document.getElementById('scroll-to-top').style.height = '0';
+  }
+  if (this.scrollY == 0) {
+    document.getElementById('scroll-to-top').style.height = '0';
+  }
+  this.oldScroll = this.scrollY;
+}
+
+window.onscroll = toggleElementsOnScroll;
+</script></body></html>
