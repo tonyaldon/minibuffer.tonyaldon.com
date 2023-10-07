@@ -1065,3 +1065,182 @@ ELISP>
   foo)
 ;; (:a 10 :b 2)
 #+END_SRC
+
+* How to copy the content of a directory in Emacs Lisp?
+:PROPERTIES:
+:ONE: minibuffer-one-episode
+:CUSTOM_ID: /2023-10-07-how-to-copy-the-content-of-a-directory-in-emacs-lisp/
+:MINIBUFFER_CREATED_AT: [2023-10-07 Sat]
+:MINIBUFFER_YOUTUBE_LINK: https://www.youtube.com/watch?v=WzGdxuKCups
+:END:
+
+#+BEGIN_SRC emacs-lisp
+(copy-directory "./foo/" "./bar/")
+(copy-directory "./foo/" "./bar/baz/" nil t)
+(copy-directory "./foo/" "./bar/" nil t t)
+#+END_SRC
+
+#+BEGIN_SRC tms
+◉ tony@tony:~/minibuffer:
+$ tree
+.
+├── bar
+├── foo
+│   ├── foo-1
+│   ├── foo-2
+│   ├── foo-3
+│   └── foo-dir
+└── notes.el
+
+3 directories, 4 files
+◉ tony@tony:~/minibuffer:
+$ cp -r foo/* bar/
+◉ tony@tony:~/minibuffer:
+$ tree
+.
+├── bar
+│   ├── foo-1
+│   ├── foo-2
+│   ├── foo-3
+│   └── foo-dir
+├── foo
+│   ├── foo-1
+│   ├── foo-2
+│   ├── foo-3
+│   └── foo-dir
+└── notes.el
+
+4 directories, 7 files
+◉ tony@tony:~/minibuffer:
+$ rm -r bar/*
+◉ tony@tony:~/minibuffer:
+$ tree
+.
+├── bar
+│   └── foo
+│       ├── foo-1
+│       ├── foo-2
+│       ├── foo-3
+│       └── foo-dir
+├── foo
+│   ├── foo-1
+│   ├── foo-2
+│   ├── foo-3
+│   └── foo-dir
+└── notes.el
+
+5 directories, 7 files
+◉ tony@tony:~/minibuffer:
+$ tree
+.
+├── bar
+│   ├── baz
+│   │   └── foo
+│   │       ├── foo-1
+│   │       ├── foo-2
+│   │       ├── foo-3
+│   │       └── foo-dir
+│   └── foo
+│       ├── foo-1
+│       ├── foo-2
+│       ├── foo-3
+│       └── foo-dir
+├── foo
+│   ├── foo-1
+│   ├── foo-2
+│   ├── foo-3
+│   └── foo-dir
+└── notes.el
+
+8 directories, 10 files
+◉ tony@tony:~/minibuffer:
+$ tree
+.
+├── bar
+│   ├── baz
+│   │   └── foo
+│   │       ├── foo-1
+│   │       ├── foo-2
+│   │       ├── foo-3
+│   │       └── foo-dir
+│   ├── foo
+│   │   ├── foo-1
+│   │   ├── foo-2
+│   │   ├── foo-3
+│   │   └── foo-dir
+│   ├── foo-1
+│   ├── foo-2
+│   ├── foo-3
+│   └── foo-dir
+├── foo
+│   ├── foo-1
+│   ├── foo-2
+│   ├── foo-3
+│   └── foo-dir
+└── notes.el
+
+9 directories, 13 files
+◉ tony@tony:~/minibuffer:
+$ rm -r bar/*
+◉ tony@tony:~/minibuffer:
+$ tree
+.
+├── bar
+│   └── foo
+│       ├── foo-1
+│       ├── foo-2
+│       ├── foo-3
+│       └── foo-dir
+├── foo
+│   ├── foo-1
+│   ├── foo-2
+│   ├── foo-3
+│   └── foo-dir
+├── #notes.el#
+└── notes.el
+
+5 directories, 8 files
+◉ tony@tony:~/minibuffer:
+$ tree
+.
+├── bar
+│   ├── baz
+│   │   └── foo
+│   │       ├── foo-1
+│   │       ├── foo-2
+│   │       ├── foo-3
+│   │       └── foo-dir
+│   └── foo
+│       ├── foo-1
+│       ├── foo-2
+│       ├── foo-3
+│       └── foo-dir
+├── foo
+│   ├── foo-1
+│   ├── foo-2
+│   ├── foo-3
+│   └── foo-dir
+├── #notes.el#
+└── notes.el
+
+8 directories, 11 files
+◉ tony@tony:~/minibuffer:
+$ rm -r bar/*
+◉ tony@tony:~/minibuffer:
+$ tree
+.
+├── bar
+│   ├── foo-1
+│   ├── foo-2
+│   ├── foo-3
+│   └── foo-dir
+├── foo
+│   ├── foo-1
+│   ├── foo-2
+│   ├── foo-3
+│   └── foo-dir
+├── #notes.el#
+└── notes.el
+
+4 directories, 8 files
+#+END_SRC
