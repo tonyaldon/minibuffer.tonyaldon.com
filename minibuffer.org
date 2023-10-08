@@ -1244,3 +1244,71 @@ $ tree
 
 4 directories, 8 files
 #+END_SRC
+
+* Do you know about default-directory variable in Emacs Lisp?
+:PROPERTIES:
+:ONE: minibuffer-one-episode
+:CUSTOM_ID: /2023-10-08-do-you-know-about-default-directory-variable-in-emacs-lisp/
+:MINIBUFFER_CREATED_AT: [2023-10-08 Sun]
+:MINIBUFFER_YOUTUBE_LINK: https://www.youtube.com/watch?v=KpijGcox7nE
+:END:
+
+#+BEGIN_SRC emacs-lisp
+(buffer-file-name) ;; "/home/tony/minibuffer/notes.el"
+default-directory  ;; "/home/tony/minibuffer/"
+(copy-directory "~/minibuffer/foo/" "./bar/")
+
+(let ((default-directory "/tmp/"))
+  (copy-directory "~/minibuffer/foo/" "./bar/" nil t))
+#+END_SRC
+
+#+BEGIN_SRC tms
+◉ tony@tony:~/minibuffer:
+$ tree
+.
+├── bar
+├── foo
+│   ├── foo-1
+│   └── foo-2
+├── #notes.el#
+└── notes.el
+
+2 directories, 4 files
+◉ tony@tony:~/minibuffer:
+$ tree
+.
+├── bar
+│   └── foo
+│       ├── foo-1
+│       └── foo-2
+├── foo
+│   ├── foo-1
+│   └── foo-2
+├── #notes.el#
+└── notes.el
+
+3 directories, 6 files
+◉ tony@tony:~/minibuffer:
+$ rm -r bar/*
+◉ tony@tony:~/minibuffer:
+$ tree
+.
+├── bar
+├── foo
+│   ├── foo-1
+│   └── foo-2
+├── #notes.el#
+└── notes.el
+
+2 directories, 4 files
+◉ tony@tony:~/minibuffer:
+$ tree /tmp/bar/
+/tmp/bar/
+└── foo
+    ├── foo-1
+    └── foo-2
+
+1 directory, 2 files
+◉ tony@tony:~/minibuffer:
+$
+#+END_SRC
