@@ -1332,3 +1332,22 @@ default-directory ;; "/home/tony/minibuffer/"
   (expand-file-name "./notes.el"))
 ;; "/tmp/notes.el"
 #+END_SRC
+
+* How to modify the content of a file in Emacs Lisp?
+:PROPERTIES:
+:ONE: minibuffer-one-episode
+:CUSTOM_ID: /2023-10-10-how-to-modify-the-content-of-a-file-in-emacs-lisp/
+:MINIBUFFER_CREATED_AT: [2023-10-10 Tue]
+:MINIBUFFER_YOUTUBE_LINK: https://www.youtube.com/watch?v=ZnbigOis75M
+:END:
+
+#+BEGIN_SRC emacs-lisp
+(let ((buff (find-file-noselect "./foo")))
+  (with-current-buffer buff
+    (goto-char (point-min))
+    (insert "foo\n")
+    (goto-char (point-max))
+    (insert "bar\n")
+    (save-buffer))
+  (kill-buffer buff))
+#+END_SRC
