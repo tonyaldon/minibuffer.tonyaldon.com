@@ -1351,3 +1351,18 @@ default-directory ;; "/home/tony/minibuffer/"
     (save-buffer))
   (kill-buffer buff))
 #+END_SRC
+
+* How to replace regexp matches in a string in Emacs Lisp?
+:PROPERTIES:
+:ONE: minibuffer-one-episode
+:CUSTOM_ID: /2023-10-11-how-to-replace-regexp-matches-in-a-string-in-emacs-lisp/
+:MINIBUFFER_CREATED_AT: [2023-10-11 Wed]
+:MINIBUFFER_YOUTUBE_LINK: https://www.youtube.com/watch?v=G0wGVdvf71g
+:END:
+
+#+BEGIN_SRC emacs-lisp
+"^^^foo-bar^^^foo-bar" ----> "^^^bar_foo^^^bar_foo"
+
+(replace-regexp-in-string "\\(foo\\)-\\(bar\\)" "\\2_\\1" "^^^foo-bar^^^foo-bar")
+;; "^^^bar_foo^^^bar_foo"
+#+END_SRC
