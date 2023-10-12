@@ -1366,3 +1366,20 @@ default-directory ;; "/home/tony/minibuffer/"
 (replace-regexp-in-string "\\(foo\\)-\\(bar\\)" "\\2_\\1" "^^^foo-bar^^^foo-bar")
 ;; "^^^bar_foo^^^bar_foo"
 #+END_SRC
+
+* How to get the substring of a string in Emacs Lisp?
+:PROPERTIES:
+:ONE: minibuffer-one-episode
+:CUSTOM_ID: /2023-10-12-how-to-get-the-substring-of-a-string-in-emacs-lisp/
+:MINIBUFFER_CREATED_AT: [2023-10-12 Thu]
+:MINIBUFFER_YOUTUBE_LINK: https://www.youtube.com/watch?v=NWq6DvuIVbM
+:END:
+
+#+BEGIN_SRC emacs-lisp
+"foo bar baz"
+
+(substring "foo bar baz" 0 3) ;; "foo"
+(substring "foo bar baz" 4) ;; "bar baz"
+(substring "foo bar baz" -7 -4) ;; "bar"
+(substring "foo bar baz" -3) ;; "baz"
+#+END_SRC
