@@ -1383,3 +1383,18 @@ default-directory ;; "/home/tony/minibuffer/"
 (substring "foo bar baz" -7 -4) ;; "bar"
 (substring "foo bar baz" -3) ;; "baz"
 #+END_SRC
+
+* How to trim strings in Emacs Lisp?
+:PROPERTIES:
+:ONE: minibuffer-one-episode
+:CUSTOM_ID: /2023-10-13-how-to-trim-strings-in-emacs-lisp/
+:MINIBUFFER_CREATED_AT: [2023-10-13 Fri]
+:MINIBUFFER_YOUTUBE_LINK: https://www.youtube.com/watch?v=r55qZOA_ObE
+:END:
+
+#+BEGIN_SRC emacs-lisp
+(string-trim "  foo bar baz  ") ;; "foo bar baz"
+(string-trim "-@-foo bar baz-_-" "[-@]+" "[-_]+") ;; "foo bar baz"
+(string-trim-left "-@-foo bar baz" "[-@]+") ;; "foo bar baz"
+(string-trim-right "foo bar baz-_-" "[-_]+") ;; "foo bar baz"
+#+END_SRC
