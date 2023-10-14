@@ -1398,3 +1398,20 @@ default-directory ;; "/home/tony/minibuffer/"
 (string-trim-left "-@-foo bar baz" "[-@]+") ;; "foo bar baz"
 (string-trim-right "foo bar baz-_-" "[-_]+") ;; "foo bar baz"
 #+END_SRC
+
+* Do you know how to capitalize a string in Emacs Lisp?
+:PROPERTIES:
+:ONE: minibuffer-one-episode
+:CUSTOM_ID: /2023-10-14-do-you-know-how-to-capitalize-a-string-in-emacs-lisp/
+:MINIBUFFER_CREATED_AT: [2023-10-14 Sat]
+:MINIBUFFER_YOUTUBE_LINK: https://www.youtube.com/watch?v=5YYBEGWb5sE
+:END:
+
+#+BEGIN_SRC emacs-lisp
+(capitalize "foo BAR bAz") ;; "Foo Bar Baz"
+(capitalize "foo-BAR-bAz") ;; "Foo-Bar-Baz"
+(capitalize "foo_BAR_bAz") ;; "Foo_Bar_Baz"
+
+(upcase "foo BAR bAz") ;; "FOO BAR BAZ"
+(downcase "foo BAR bAz") ;; "foo bar baz"
+#+END_SRC
