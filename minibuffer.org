@@ -1415,3 +1415,16 @@ default-directory ;; "/home/tony/minibuffer/"
 (upcase "foo BAR bAz") ;; "FOO BAR BAZ"
 (downcase "foo BAR bAz") ;; "foo bar baz"
 #+END_SRC
+
+* How to leverage describe-key command to write Emacs Lisp code?
+:PROPERTIES:
+:ONE: minibuffer-one-episode
+:CUSTOM_ID: /2023-10-15-how-to-leverage-describe-key-command-to-write-emacs-lisp-code/
+:MINIBUFFER_CREATED_AT: [2023-10-15 Sun]
+:MINIBUFFER_YOUTUBE_LINK: https://www.youtube.com/watch?v=rzpniEkOELE
+:END:
+
+#+BEGIN_SRC emacs-lisp
+(newline 3)
+(org-forward-heading-same-level 1)
+#+END_SRC
