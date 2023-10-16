@@ -1428,3 +1428,21 @@ default-directory ;; "/home/tony/minibuffer/"
 (newline 3)
 (org-forward-heading-same-level 1)
 #+END_SRC
+
+* Do you know about save-match-data macro in Emacs Lisp?
+:PROPERTIES:
+:ONE: minibuffer-one-episode
+:CUSTOM_ID: /2023-10-16-do-you-know-about-save-match-data-macro-in-emacs-lisp/
+:MINIBUFFER_CREATED_AT: [2023-10-16 Mon]
+:MINIBUFFER_YOUTUBE_LINK: https://www.youtube.com/watch?v=ajftqkajg6s
+:END:
+
+#+BEGIN_SRC emacs-lisp
+(progn
+  (re-search-forward "foo")
+  (message "1. %s" (match-string 0))
+  (save-match-data
+    (re-search-forward "bar")
+    (message "2. %s" (match-string 0)))
+  (message "3. %s" (match-string 0)))
+#+END_SRC
