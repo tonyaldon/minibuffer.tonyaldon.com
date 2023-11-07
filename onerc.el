@@ -154,7 +154,7 @@ https://stackoverflow.com/questions/2450954/how-to-randomize-shuffle-a-javascrip
          (content
           (org-export-data-with-backend
            (org-element-contents page-tree)
-           'one nil))
+           'one-ox nil))
          (headlines (cdr (one-default-list-headlines page-tree)))
          (nav (one-default-nav path pages)))
     (jack-html
