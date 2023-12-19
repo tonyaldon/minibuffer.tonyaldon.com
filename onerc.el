@@ -1,4 +1,4 @@
-(setq minibuffer-js-onscroll
+(setq mb-js-onscroll
       "
 function toggleElementsOnScroll(e) {
   if (this.oldScroll === undefined || this.oldScroll > this.scrollY) {
@@ -20,7 +20,7 @@ function toggleElementsOnScroll(e) {
 window.onscroll = toggleElementsOnScroll;
 ")
 
-(defun minibuffer-date (path)
+(defun mb-date (path)
   "\"/2022-11-08-.../\" -> \"November 12, 2022\""
   (let ((time (thread-first
                 path
@@ -29,17 +29,17 @@ window.onscroll = toggleElementsOnScroll;
                 date-to-time)))
     (format-time-string "%B %d, %Y" time)))
 
-(defun minibuffer-thumbnail (path)
+(defun mb-thumbnail (path)
   "/2022-11-08-.../ -> /img/2022-11-08-thumbnail.webp"
   (concat "/img" (substring path 0 12) "thumbnail.webp"))
 
-(defun minibuffer-is-episode-p (path)
+(defun mb-is-episode-p (path)
   "Return t if PATH is a valid page path."
   (let ((episode-re ;; /2022-11-08-...
          "\\`/[[:digit:]]\\{4\\}-[[:digit:]]\\{2\\}-[[:digit:]]\\{2\\}-"))
     (string-match-p episode-re path)))
 
-(setq minibuffer-footer
+(setq mb-footer
       '(:div/footer
         (:div
          "Twitter: "(:a (@ :href "https://twitter.com/tonyaldon") "@tonyaldon")
@@ -49,22 +49,22 @@ window.onscroll = toggleElementsOnScroll;
          "RSS: " (:a (@ :href "/feed.xml") "feed.xml"))
         (:div "© 2023 Tony Aldon.  All rights reserved.")))
 
-(defun minibuffer-item (page &optional is-episode-p)
+(defun mb-item (page &optional is-episode-p)
   "Episode item to be listed either in the home page or in a sidebare."
   (let* ((path (plist-get page :one-path))
          (title (plist-get page :one-title))
-         (date (minibuffer-date path)))
+         (date (mb-date path)))
     `(:div.item
       (:a (@ :href ,path)
        (:div (@ :class ,(if is-episode-p "thumbnail" "thumbnail-home"))
-        (:img (@ :src ,(minibuffer-thumbnail path)
+        (:img (@ :src ,(mb-thumbnail path)
                  :alt ,title
                  ,@(if is-episode-p
                        '(:width "168px" :height "94px")
                      '(:width "640px" :height "360px")))))
        (:div.details (:h4 ,title) (:div.date ,date))))))
 
-(defun minibuffer-shuffle (v)
+(defun mb-shuffle (v)
   "Shuffle vectors using Fisher-Yates algo.
 
 See https://www.reddit.com/r/emacs/comments/16cl3mk/shuffling_vectors_in_emacs_lisp_with_fisheryates/."
@@ -72,9 +72,9 @@ See https://www.reddit.com/r/emacs/comments/16cl3mk/shuffling_vectors_in_emacs_l
     (dotimes (i (1- n) v)
       (cl-rotatef (aref v i) (aref v (+ i (random (- n i))))))))
 
-;; (minibuffer-shuffle '[1 2 3 4 5]) ; [5 4 1 3 2]
+;; (mb-shuffle '[1 2 3 4 5]) ; [5 4 1 3 2]
 
-(defun minibuffer-one-home (page-tree pages global)
+(defun mb-one-home (page-tree pages global)
   "Render function of the home page."
   (let* ((title (org-element-property :raw-value page-tree)))
     (jack-html
@@ -96,20 +96,20 @@ See https://www.reddit.com/r/emacs/comments/16cl3mk/shuffling_vectors_in_emacs_l
             (@ :viewBox "0 0 32 32")
             (:path (@ :d "M15.997 13.374l-7.081 7.081L7 18.54l8.997-8.998 9.003 9-1.916 1.916z")))))
          (:div/items-home
-          ,(mapcar #'minibuffer-item
+          ,(mapcar #'mb-item
                    (nreverse
                     (seq-filter
                      (lambda (page)
-                       (minibuffer-is-episode-p (plist-get page :one-path)))
+                       (mb-is-episode-p (plist-get page :one-path)))
                      pages))))
-         ,minibuffer-footer)
-        (:script ,minibuffer-js-onscroll))))))
+         ,mb-footer)
+        (:script ,mb-js-onscroll))))))
 
-(defun minibuffer-one-episode (page-tree pages global)
+(defun mb-one-episode (page-tree pages global)
   "Render function of the episode pages."
   (let* ((title (org-element-property :raw-value page-tree))
          (path (org-element-property :CUSTOM_ID page-tree))
-         (date (minibuffer-date path))
+         (date (mb-date path))
          (youtube-id (thread-first
                        (org-element-property :MINIBUFFER_YOUTUBE_LINK page-tree)
                        (split-string "v=")
@@ -160,19 +160,19 @@ See https://www.reddit.com/r/emacs/comments/16cl3mk/shuffling_vectors_in_emacs_l
            (:div.date (@ :style "text-align:center; margin-bottom:16px;") ,date)
            ,content
            ,nav
-           ,minibuffer-footer)
+           ,mb-footer)
           (:div/secondary
            (:div/items
-            ,(mapcar (lambda (page) (minibuffer-item page 'is-episode-p))
+            ,(mapcar (lambda (page) (mb-item page 'is-episode-p))
                      (seq-filter
                       (lambda (page)
-                        (minibuffer-is-episode-p (plist-get page :one-path)))
-                      (minibuffer-shuffle (vconcat pages))))))))
-        (:script ,minibuffer-js-onscroll))))))
+                        (mb-is-episode-p (plist-get page :one-path)))
+                      (mb-shuffle (vconcat pages))))))))
+        (:script ,mb-js-onscroll))))))
 
 ;;; feed.xml
 
-(defun minibuffer-feed (pages tree global)
+(defun mb-feed (pages tree global)
   "Produce file ./public/feed.xml"
   (with-temp-file "./public/feed.xml"
     (insert
@@ -198,4 +198,4 @@ See https://www.reddit.com/r/emacs/comments/16cl3mk/shuffling_vectors_in_emacs_l
                     (:updated ,(concat date "T00:00:00Z")))))))
           pages))))))
 
-(add-hook 'one-hook 'minibuffer-feed)
+(add-hook 'one-hook 'mb-feed)

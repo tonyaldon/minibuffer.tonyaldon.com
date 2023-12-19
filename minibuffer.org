@@ -1,12 +1,12 @@
 * minibuffer
 :PROPERTIES:
-:ONE: minibuffer-one-home
+:ONE: mb-one-home
 :CUSTOM_ID: /
 :MINIBUFFER_CREATED_AT: [2022-11-22 Tue]
 :END:
 * How to match 47 characters in a string with Emacs Lisp?
 :PROPERTIES:
-:ONE: minibuffer-one-episode
+:ONE: mb-one-episode
 :CUSTOM_ID: /2023-08-22-how-to-match-47-characters-in-a-string-with-emacs-lisp/
 :MINIBUFFER_CREATED_AT: [2023-08-28 Mon]
 :MINIBUFFER_YOUTUBE_LINK: https://www.youtube.com/watch?v=xfIuFNpfYWI
@@ -24,7 +24,7 @@
 
 * How to put the value of an Org property in the kill-ring?
 :PROPERTIES:
-:ONE: minibuffer-one-episode
+:ONE: mb-one-episode
 :CUSTOM_ID: /2023-08-23-how-to-put-the-value-of-an-org-property-in-the-kill-ring/
 :MINIBUFFER_CREATED_AT: [2023-08-28 Mon]
 :MINIBUFFER_YOUTUBE_LINK: https://www.youtube.com/watch?v=WnjrpR1sUKM
@@ -38,7 +38,7 @@
 
 * Do you know how to generate html strings with Emacs Lisp?
 :PROPERTIES:
-:ONE: minibuffer-one-episode
+:ONE: mb-one-episode
 :CUSTOM_ID: /2023-08-24-do-you-know-how-to-generate-html-strings-with-emacs-lisp/
 :MINIBUFFER_CREATED_AT: [2023-08-28 Mon]
 :MINIBUFFER_YOUTUBE_LINK: https://www.youtube.com/watch?v=Gn2HjXwHhHg
@@ -64,7 +64,7 @@
 
 * How to add html attributes with the Emacs package Jack?
 :PROPERTIES:
-:ONE: minibuffer-one-episode
+:ONE: mb-one-episode
 :CUSTOM_ID: /2023-08-25-how-to-add-html-attributes-with-the-emacs-package-jack/
 :MINIBUFFER_CREATED_AT: [2023-08-28 Mon]
 :MINIBUFFER_YOUTUBE_LINK: https://www.youtube.com/watch?v=68NS_2afPw8
@@ -84,7 +84,7 @@
 
 * How to check for a regexp match after point with Emacs Lisp?
 :PROPERTIES:
-:ONE: minibuffer-one-episode
+:ONE: mb-one-episode
 :CUSTOM_ID: /2023-08-26-how-to-check-for-a-regexp-match-after-point-with-emacs-lisp/
 :MINIBUFFER_CREATED_AT: [2023-08-28 Mon]
 :MINIBUFFER_YOUTUBE_LINK: https://www.youtube.com/watch?v=cxpTi11pYXI
@@ -99,7 +99,7 @@
 
 * How to insert foo at the end of buffer without changing point with Emacs Lisp?
 :PROPERTIES:
-:ONE: minibuffer-one-episode
+:ONE: mb-one-episode
 :CUSTOM_ID: /2023-08-27-how-to-insert-foo-at-the-end-of-buffer-without-changing-point-with-emacs-lisp/
 :MINIBUFFER_CREATED_AT: [2023-08-28 Mon]
 :MINIBUFFER_YOUTUBE_LINK: https://www.youtube.com/watch?v=KA3cghsUVaM
@@ -113,7 +113,7 @@
 
 * How to check for the states of buffer-local variables in Emacs Lisp?
 :PROPERTIES:
-:ONE: minibuffer-one-episode
+:ONE: mb-one-episode
 :CUSTOM_ID: /2023-08-28-how-to-check-for-the-states-of-buffer-local-variables-in-emacs-lisp/
 :MINIBUFFER_CREATED_AT: [2023-08-28 Mon]
 :MINIBUFFER_YOUTUBE_LINK: https://www.youtube.com/watch?v=HhGVR7xhXis
@@ -128,7 +128,7 @@
 
 * How to turn a function into a command in Emacs Lisp?
 :PROPERTIES:
-:ONE: minibuffer-one-episode
+:ONE: mb-one-episode
 :CUSTOM_ID: /2023-08-29-how-to-turn-a-function-into-a-command-in-emacs-lisp/
 :MINIBUFFER_CREATED_AT: [2023-08-29 Tue]
 :MINIBUFFER_YOUTUBE_LINK: https://www.youtube.com/watch?v=z8IJz25EDeA
@@ -147,7 +147,7 @@
 
 * How to insert strings in a given buffer in Emacs Lisp?
 :PROPERTIES:
-:ONE: minibuffer-one-episode
+:ONE: mb-one-episode
 :CUSTOM_ID: /2023-08-30-how-to-insert-strings-in-a-given-buffer-in-emacs-lisp/
 :MINIBUFFER_CREATED_AT: [2023-08-30 Wed]
 :MINIBUFFER_YOUTUBE_LINK: https://www.youtube.com/watch?v=QXlmNjYpjNY
@@ -161,7 +161,7 @@
 
 * How to list files in a given directory in Emacs Lisp?
 :PROPERTIES:
-:ONE: minibuffer-one-episode
+:ONE: mb-one-episode
 :CUSTOM_ID: /2023-08-31-how-to-list-files-in-a-given-directory-in-emacs-lisp/
 :MINIBUFFER_CREATED_AT: [2023-08-31 Thu]
 :MINIBUFFER_YOUTUBE_LINK: https://www.youtube.com/watch?v=5PgMa8bzcv4
@@ -176,7 +176,7 @@
 
 * How to replace regexp in buffers in Emacs Lisp?
 :PROPERTIES:
-:ONE: minibuffer-one-episode
+:ONE: mb-one-episode
 :CUSTOM_ID: /2023-09-01-how-to-replace-regexp-in-buffers-in-emacs-lisp/
 :MINIBUFFER_CREATED_AT: [2023-09-01 Fri]
 :MINIBUFFER_YOUTUBE_LINK: https://www.youtube.com/watch?v=sPup0RjLLmo
@@ -193,7 +193,7 @@ not recommended in Elisp programs in general.
 
 * How to search for regexp in buffers in Emacs Lisp?
 :PROPERTIES:
-:ONE: minibuffer-one-episode
+:ONE: mb-one-episode
 :CUSTOM_ID: /2023-09-02-how-to-search-for-regexp-in-buffers-in-emacs-lisp/
 :MINIBUFFER_CREATED_AT: [2023-09-02 Sat]
 :MINIBUFFER_YOUTUBE_LINK: https://www.youtube.com/watch?v=LD7dNcBavnI
@@ -208,7 +208,7 @@ not recommended in Elisp programs in general.
 
 * What influence does case-fold-search have on searches in Emacs Lisp?
 :PROPERTIES:
-:ONE: minibuffer-one-episode
+:ONE: mb-one-episode
 :CUSTOM_ID: /2023-09-03-what-influence-does-case-fold-search-have-on-searches-in-emacs-lisp/
 :MINIBUFFER_CREATED_AT: [2023-09-03 Sun]
 :MINIBUFFER_YOUTUBE_LINK: https://www.youtube.com/watch?v=eGZCZe5qLUE
@@ -224,7 +224,7 @@ case-fold-search ;; t
 
 * How to manipulate the match data in Emacs Lisp?
 :PROPERTIES:
-:ONE: minibuffer-one-episode
+:ONE: mb-one-episode
 :CUSTOM_ID: /2023-09-04-how-to-manipulate-the-match-data-in-emacs-lisp/
 :MINIBUFFER_CREATED_AT: [2023-09-04 Mon]
 :MINIBUFFER_YOUTUBE_LINK: https://www.youtube.com/watch?v=G6bNaoyKW4c
@@ -248,7 +248,7 @@ case-fold-search ;; t
 
 * How to replace regexp in buffers in Emacs Lisp?
 :PROPERTIES:
-:ONE: minibuffer-one-episode
+:ONE: mb-one-episode
 :CUSTOM_ID: /2023-09-05-how-to-replace-regexp-in-buffers-in-emacs-lisp-with-a-while-loop/
 :MINIBUFFER_CREATED_AT: [2023-09-05 Tue]
 :MINIBUFFER_YOUTUBE_LINK: https://www.youtube.com/watch?v=CV_YB4t0JcQ
@@ -262,7 +262,7 @@ case-fold-search ;; t
 
 * How to get the content in buffers in Emacs Lisp?
 :PROPERTIES:
-:ONE: minibuffer-one-episode
+:ONE: mb-one-episode
 :CUSTOM_ID: /2023-09-06-how-to-get-the-content-in-buffers-in-emacs-lisp/
 :MINIBUFFER_CREATED_AT: [2023-09-06 Wed]
 :MINIBUFFER_YOUTUBE_LINK: https://www.youtube.com/watch?v=H987Y7FxiJw
@@ -275,7 +275,7 @@ case-fold-search ;; t
 
 * How to manipulate vectors in Emacs Lisp?
 :PROPERTIES:
-:ONE: minibuffer-one-episode
+:ONE: mb-one-episode
 :CUSTOM_ID: /2023-09-07-how-to-manipulate-vectors-in-emacs-lisp/
 :MINIBUFFER_CREATED_AT: [2023-09-07 Thu]
 :MINIBUFFER_YOUTUBE_LINK: https://www.youtube.com/watch?v=71U2FqCw7zQ
@@ -298,7 +298,7 @@ vec1 ;; [foo b c]
 
 * How to swap elements in vectors in Emacs Lisp?
 :PROPERTIES:
-:ONE: minibuffer-one-episode
+:ONE: mb-one-episode
 :CUSTOM_ID: /2023-09-08-how-to-swap-elements-in-vectors-in-emacs-lisp/
 :MINIBUFFER_CREATED_AT: [2023-09-08 Fri]
 :MINIBUFFER_YOUTUBE_LINK: https://www.youtube.com/watch?v=W_FAwDN01No
@@ -314,7 +314,7 @@ vec ;; [baz bar foo]
 
 * How to run a unix utility on file at point in dired in Emacs Lisp?
 :PROPERTIES:
-:ONE: minibuffer-one-episode
+:ONE: mb-one-episode
 :CUSTOM_ID: /2023-09-09-how-to-run-a-unix-utility-on-file-at-point-in-dired-in-emacs-lisp/
 :MINIBUFFER_CREATED_AT: [2023-09-09 Sat]
 :MINIBUFFER_YOUTUBE_LINK: https://www.youtube.com/watch?v=0kzbFsRB4vk
@@ -329,7 +329,7 @@ vec ;; [baz bar foo]
 
 * How to copy the current line below in Emacs Lisp?
 :PROPERTIES:
-:ONE: minibuffer-one-episode
+:ONE: mb-one-episode
 :CUSTOM_ID: /2023-09-10-how-to-copy-the-current-line-below-in-emacs-lisp/
 :MINIBUFFER_CREATED_AT: [2023-09-10 Sun]
 :MINIBUFFER_UPDATED_AT: [2023-09-11 Mon]
@@ -354,7 +354,7 @@ You might be interested in:
 
 * How to start a shell in a window below in Emacs Lisp?
 :PROPERTIES:
-:ONE: minibuffer-one-episode
+:ONE: mb-one-episode
 :CUSTOM_ID: /2023-09-11-how-to-start-a-shell-in-a-window-below-in-emacs-lisp/
 :MINIBUFFER_CREATED_AT: [2023-09-11 Mon]
 :MINIBUFFER_YOUTUBE_LINK: https://www.youtube.com/watch?v=3tybE9IYKuA
@@ -368,7 +368,7 @@ You might be interested in:
 
 * How to move the point around in buffers in Emacs Lisp?
 :PROPERTIES:
-:ONE: minibuffer-one-episode
+:ONE: mb-one-episode
 :CUSTOM_ID: /2023-09-12-how-to-move-the-point-around-in-buffers-in-emacs-lisp/
 :MINIBUFFER_CREATED_AT: [2023-09-12 Tue]
 :MINIBUFFER_YOUTUBE_LINK: https://www.youtube.com/watch?v=6e5cyzo6b-s
@@ -391,7 +391,7 @@ You might be interested in:
 
 * How to stop displaying calls to message in Emacs Lisp?
 :PROPERTIES:
-:ONE: minibuffer-one-episode
+:ONE: mb-one-episode
 :CUSTOM_ID: /2023-09-13-how-to-stop-displaying-calls-to-message-in-emacs-lisp/
 :MINIBUFFER_CREATED_AT: [2023-09-13 Wed]
 :MINIBUFFER_YOUTUBE_LINK: https://www.youtube.com/watch?v=I-uEaHCNkLc
@@ -408,7 +408,7 @@ You might be interested in:
 
 * How to save and restore the selected window in Emacs Lisp?
 :PROPERTIES:
-:ONE: minibuffer-one-episode
+:ONE: mb-one-episode
 :CUSTOM_ID: /2023-09-14-how-to-save-and-restore-the-selected-window-in-emacs-lisp/
 :MINIBUFFER_CREATED_AT: [2023-09-14 Thu]
 :MINIBUFFER_YOUTUBE_LINK: https://www.youtube.com/watch?v=8OkiWhQ1vOM
@@ -422,7 +422,7 @@ You might be interested in:
 
 * How to loop over the window list of the selected frame in Emacs Lisp?
 :PROPERTIES:
-:ONE: minibuffer-one-episode
+:ONE: mb-one-episode
 :CUSTOM_ID: /2023-09-15-how-to-loop-over-the-window-list-of-the-selected-frame-in-emacs-lisp/
 :MINIBUFFER_CREATED_AT: [2023-09-15 Fri]
 :MINIBUFFER_YOUTUBE_LINK: https://www.youtube.com/watch?v=gHBeAaV6yDg
@@ -438,7 +438,7 @@ You might be interested in:
 
 * How to select a word in a list with minibuffer completion in Emacs Lisp?
 :PROPERTIES:
-:ONE: minibuffer-one-episode
+:ONE: mb-one-episode
 :CUSTOM_ID: /2023-09-16-how-to-select-a-word-in-a-list-with-minibuffer-completion-in-emacs-lisp/
 :MINIBUFFER_CREATED_AT: [2023-09-16 Sat]
 :MINIBUFFER_YOUTUBE_LINK: https://www.youtube.com/watch?v=4-SlzJL9JiI
@@ -459,7 +459,7 @@ You might be interested in:
 
 * How to write buffer region into a file in Emacs Lisp?
 :PROPERTIES:
-:ONE: minibuffer-one-episode
+:ONE: mb-one-episode
 :CUSTOM_ID: /2023-09-17-how-to-write-buffer-region-into-a-file-in-emacs-lisp/
 :MINIBUFFER_CREATED_AT: [2023-09-17 Sun]
 :MINIBUFFER_YOUTUBE_LINK: https://www.youtube.com/watch?v=yzlCqStHIhs
@@ -478,7 +478,7 @@ You might be interested in:
 
 * How to display the documentation of the symbol at point Emacs Lisp?
 :PROPERTIES:
-:ONE: minibuffer-one-episode
+:ONE: mb-one-episode
 :CUSTOM_ID: /2023-09-18-how-to-display-the-documentation-of-the-symbol-at-point-emacs-lisp/
 :MINIBUFFER_CREATED_AT: [2023-09-18 Mon]
 :MINIBUFFER_YOUTUBE_LINK: https://www.youtube.com/watch?v=Y5WLDmWaBNg
@@ -496,7 +496,7 @@ You might be interested in:
 
 * Do you know about the Emacs Lisp function split-line?
 :PROPERTIES:
-:ONE: minibuffer-one-episode
+:ONE: mb-one-episode
 :CUSTOM_ID: /2023-09-19-do-you-know-about-the-emacs-lisp-function-split-line/
 :MINIBUFFER_CREATED_AT: [2023-09-19 Tue]
 :MINIBUFFER_YOUTUBE_LINK: https://www.youtube.com/watch?v=eLp9qyGM3GU
@@ -514,7 +514,7 @@ You might be interested in:
 
 * How to make Emacs unusable using the hook post-self-insert-hook?
 :PROPERTIES:
-:ONE: minibuffer-one-episode
+:ONE: mb-one-episode
 :CUSTOM_ID: /2023-09-20-how-to-make-emacs-unusable-using-the-hook-post-self-insert-hook/
 :MINIBUFFER_CREATED_AT: [2023-09-20 Wed]
 :MINIBUFFER_YOUTUBE_LINK: https://www.youtube.com/watch?v=O09FjRyjXLU
@@ -529,7 +529,7 @@ You might be interested in:
 
 * How to define a command that works on the selected region in Emacs Lisp?
 :PROPERTIES:
-:ONE: minibuffer-one-episode
+:ONE: mb-one-episode
 :CUSTOM_ID: /2023-09-21-how-to-define-a-command-that-works-on-the-selected-region-in-emacs-lisp/
 :MINIBUFFER_CREATED_AT: [2023-09-21 Thu]
 :MINIBUFFER_YOUTUBE_LINK: https://www.youtube.com/watch?v=ZwYU1v3Abug
@@ -547,7 +547,7 @@ You might be interested in:
 
 * How to check that we have reached the end of buffer in Emacs Lisp?
 :PROPERTIES:
-:ONE: minibuffer-one-episode
+:ONE: mb-one-episode
 :CUSTOM_ID: /2023-09-22-how-to-check-that-we-have-reached-the-end-of-buffer-in-emacs-lisp/
 :MINIBUFFER_CREATED_AT: [2023-09-22 Fri]
 :MINIBUFFER_YOUTUBE_LINK: https://www.youtube.com/watch?v=H_Q_PFREJeY
@@ -563,7 +563,7 @@ You might be interested in:
 
 * How to run some Emacs Lisp code in batch mode?
 :PROPERTIES:
-:ONE: minibuffer-one-episode
+:ONE: mb-one-episode
 :CUSTOM_ID: /2023-09-23-how-to-run-some-emacs-lisp-code-in-batch-mode/
 :MINIBUFFER_CREATED_AT: [2023-09-23 Sat]
 :MINIBUFFER_YOUTUBE_LINK: https://www.youtube.com/watch?v=psZbG0HEHSs
@@ -595,7 +595,7 @@ foo
 
 * How to run some Emacs Lisp code in batch mode #2?
 :PROPERTIES:
-:ONE: minibuffer-one-episode
+:ONE: mb-one-episode
 :CUSTOM_ID: /2023-09-24-how-to-run-some-emacs-lisp-code-in-batch-mode-2/
 :MINIBUFFER_CREATED_AT: [2023-09-24 Sun]
 :MINIBUFFER_YOUTUBE_LINK: https://www.youtube.com/watch?v=zh_q-eeHOqw
@@ -627,7 +627,7 @@ $
 
 * How to write tests in Emacs Lisp?
 :PROPERTIES:
-:ONE: minibuffer-one-episode
+:ONE: mb-one-episode
 :CUSTOM_ID: /2023-09-25-how-to-write-tests-in-emacs-lisp/
 :MINIBUFFER_CREATED_AT: [2023-09-25 Mon]
 :MINIBUFFER_YOUTUBE_LINK: https://www.youtube.com/watch?v=H5FxcTh3QrI
@@ -644,7 +644,7 @@ $
 
 * How to throw and test errors in Emacs Lisp?
 :PROPERTIES:
-:ONE: minibuffer-one-episode
+:ONE: mb-one-episode
 :CUSTOM_ID: /2023-09-26-how-to-throw-and-test-errors-in-emacs-lisp/
 :MINIBUFFER_CREATED_AT: [2023-09-26 Tue]
 :MINIBUFFER_YOUTUBE_LINK: https://www.youtube.com/watch?v=qW6q8HeHt0s
@@ -666,7 +666,7 @@ $
 
 * What does Org parsed tree look like in Emacs Lisp?
 :PROPERTIES:
-:ONE: minibuffer-one-episode
+:ONE: mb-one-episode
 :CUSTOM_ID: /2023-09-27-what-does-org-parsed-tree-look-like-in-emacs-lisp/
 :MINIBUFFER_CREATED_AT: [2023-09-27 Wed]
 :MINIBUFFER_YOUTUBE_LINK: https://www.youtube.com/watch?v=We5X5mfmWz8
@@ -792,7 +792,7 @@ echo foo bar baz
 
 * Do you know how to list org-mode source blocks with Emacs Lisp?
 :PROPERTIES:
-:ONE: minibuffer-one-episode
+:ONE: mb-one-episode
 :CUSTOM_ID: /2023-09-28-do-you-know-how-to-list-org-mode-source-blocks-with-emacs-lisp/
 :MINIBUFFER_CREATED_AT: [2023-09-28 Thu]
 :MINIBUFFER_YOUTUBE_LINK: https://www.youtube.com/watch?v=h6YuiSlB2dQ
@@ -920,7 +920,7 @@ echo foo bar baz
 
 * Do you know how to unbind variables and functions in Emacs Lisp?
 :PROPERTIES:
-:ONE: minibuffer-one-episode
+:ONE: mb-one-episode
 :CUSTOM_ID: /2023-09-29-do-you-know-how-to-unbind-variables-and-functions-in-emacs-lisp/
 :MINIBUFFER_CREATED_AT: [2023-09-29 Fri]
 :MINIBUFFER_YOUTUBE_LINK: https://www.youtube.com/watch?v=qP5CBbqQGHk
@@ -940,7 +940,7 @@ foo
 
 * How to create a temporary file in Emacs Lisp?
 :PROPERTIES:
-:ONE: minibuffer-one-episode
+:ONE: mb-one-episode
 :CUSTOM_ID: /2023-09-30-how-to-create-a-temporary-file-in-emacs-lisp/
 :MINIBUFFER_CREATED_AT: [2023-09-30 Sat]
 :MINIBUFFER_YOUTUBE_LINK: https://www.youtube.com/watch?v=QUhuPGN_o1k
@@ -956,7 +956,7 @@ foo
 
 * How to evaluate an expression in Emacs Lisp? (for beginners)
 :PROPERTIES:
-:ONE: minibuffer-one-episode
+:ONE: mb-one-episode
 :CUSTOM_ID: /2023-10-01-how-to-evaluate-an-expression-in-emacs-lisp-for-beginners/
 :MINIBUFFER_CREATED_AT: [2023-10-01 Sun]
 :MINIBUFFER_YOUTUBE_LINK: https://www.youtube.com/watch?v=QG9G_dh20Tg
@@ -971,7 +971,7 @@ foo
 
 * Do you know inferior-emacs-lisp-mode for playing with Emacs Lisp?
 :PROPERTIES:
-:ONE: minibuffer-one-episode
+:ONE: mb-one-episode
 :CUSTOM_ID: /2023-10-02-do-you-inferior-emacs-lisp-mode-for-playing-with-emacs-lisp/
 :MINIBUFFER_CREATED_AT: [2023-10-02 Mon]
 :MINIBUFFER_UPDATED_AT: [2023-10-03 Tue]
@@ -1002,7 +1002,7 @@ ELISP>
 
 * Do you kwow how to generate ISO 8601 dates in Emacs Lisp?
 :PROPERTIES:
-:ONE: minibuffer-one-episode
+:ONE: mb-one-episode
 :CUSTOM_ID: /2023-10-03-do-you-kwow-how-to-generate-iso-8601-dates-in-emacs-lisp/
 :MINIBUFFER_CREATED_AT: [2023-10-03 Tue]
 :MINIBUFFER_YOUTUBE_LINK: https://www.youtube.com/watch?v=RTs1IhRiKXI
@@ -1015,7 +1015,7 @@ ELISP>
 
 * What commands do you use to evaluate Emacs Lisp expressions?
 :PROPERTIES:
-:ONE: minibuffer-one-episode
+:ONE: mb-one-episode
 :CUSTOM_ID: /2023-10-04-what-commands-do-you-use-to-evaluate-emacs-lisp-expression/
 :MINIBUFFER_CREATED_AT: [2023-10-04 Wed]
 :MINIBUFFER_YOUTUBE_LINK: https://www.youtube.com/watch?v=pzWOdwNQE5s
@@ -1030,7 +1030,7 @@ ELISP>
 
 * How to manipulate property lists in Emacs Lisp?
 :PROPERTIES:
-:ONE: minibuffer-one-episode
+:ONE: mb-one-episode
 :CUSTOM_ID: /2023-10-05-how-to-manipulate-property-lists-in-emacs-lisp/
 :MINIBUFFER_CREATED_AT: [2023-10-05 Thu]
 :MINIBUFFER_YOUTUBE_LINK: https://www.youtube.com/watch?v=bFElWA9WPW0
@@ -1050,7 +1050,7 @@ ELISP>
 
 * How to change values in Emacs Lisp property lists?
 :PROPERTIES:
-:ONE: minibuffer-one-episode
+:ONE: mb-one-episode
 :CUSTOM_ID: /2023-10-06-how-to-change-values-in-emacs-lisp-property-lists/
 :MINIBUFFER_CREATED_AT: [2023-10-06 Fri]
 :MINIBUFFER_YOUTUBE_LINK: https://www.youtube.com/watch?v=AZiSsLG4HWk
@@ -1068,7 +1068,7 @@ ELISP>
 
 * How to copy the content of a directory in Emacs Lisp?
 :PROPERTIES:
-:ONE: minibuffer-one-episode
+:ONE: mb-one-episode
 :CUSTOM_ID: /2023-10-07-how-to-copy-the-content-of-a-directory-in-emacs-lisp/
 :MINIBUFFER_CREATED_AT: [2023-10-07 Sat]
 :MINIBUFFER_YOUTUBE_LINK: https://www.youtube.com/watch?v=WzGdxuKCups
@@ -1247,7 +1247,7 @@ $ tree
 
 * Do you know about default-directory variable in Emacs Lisp?
 :PROPERTIES:
-:ONE: minibuffer-one-episode
+:ONE: mb-one-episode
 :CUSTOM_ID: /2023-10-08-do-you-know-about-default-directory-variable-in-emacs-lisp/
 :MINIBUFFER_CREATED_AT: [2023-10-08 Sun]
 :MINIBUFFER_YOUTUBE_LINK: https://www.youtube.com/watch?v=KpijGcox7nE
@@ -1315,7 +1315,7 @@ $
 
 * How to convert a filename into an absolute filename in Emacs Lisp?
 :PROPERTIES:
-:ONE: minibuffer-one-episode
+:ONE: mb-one-episode
 :CUSTOM_ID: /2023-10-09-how-to-convert-a-filename-into-an-absolute-filename-in-emacs-lisp/
 :MINIBUFFER_CREATED_AT: [2023-10-09 Mon]
 :MINIBUFFER_YOUTUBE_LINK: https://www.youtube.com/watch?v=CUjRoMTk9lo
@@ -1335,7 +1335,7 @@ default-directory ;; "/home/tony/minibuffer/"
 
 * How to modify the content of a file in Emacs Lisp?
 :PROPERTIES:
-:ONE: minibuffer-one-episode
+:ONE: mb-one-episode
 :CUSTOM_ID: /2023-10-10-how-to-modify-the-content-of-a-file-in-emacs-lisp/
 :MINIBUFFER_CREATED_AT: [2023-10-10 Tue]
 :MINIBUFFER_YOUTUBE_LINK: https://www.youtube.com/watch?v=ZnbigOis75M
@@ -1354,7 +1354,7 @@ default-directory ;; "/home/tony/minibuffer/"
 
 * How to replace regexp matches in a string in Emacs Lisp?
 :PROPERTIES:
-:ONE: minibuffer-one-episode
+:ONE: mb-one-episode
 :CUSTOM_ID: /2023-10-11-how-to-replace-regexp-matches-in-a-string-in-emacs-lisp/
 :MINIBUFFER_CREATED_AT: [2023-10-11 Wed]
 :MINIBUFFER_YOUTUBE_LINK: https://www.youtube.com/watch?v=G0wGVdvf71g
@@ -1369,7 +1369,7 @@ default-directory ;; "/home/tony/minibuffer/"
 
 * How to get the substring of a string in Emacs Lisp?
 :PROPERTIES:
-:ONE: minibuffer-one-episode
+:ONE: mb-one-episode
 :CUSTOM_ID: /2023-10-12-how-to-get-the-substring-of-a-string-in-emacs-lisp/
 :MINIBUFFER_CREATED_AT: [2023-10-12 Thu]
 :MINIBUFFER_YOUTUBE_LINK: https://www.youtube.com/watch?v=NWq6DvuIVbM
@@ -1386,7 +1386,7 @@ default-directory ;; "/home/tony/minibuffer/"
 
 * How to trim strings in Emacs Lisp?
 :PROPERTIES:
-:ONE: minibuffer-one-episode
+:ONE: mb-one-episode
 :CUSTOM_ID: /2023-10-13-how-to-trim-strings-in-emacs-lisp/
 :MINIBUFFER_CREATED_AT: [2023-10-13 Fri]
 :MINIBUFFER_YOUTUBE_LINK: https://www.youtube.com/watch?v=r55qZOA_ObE
@@ -1401,7 +1401,7 @@ default-directory ;; "/home/tony/minibuffer/"
 
 * Do you know how to capitalize a string in Emacs Lisp?
 :PROPERTIES:
-:ONE: minibuffer-one-episode
+:ONE: mb-one-episode
 :CUSTOM_ID: /2023-10-14-do-you-know-how-to-capitalize-a-string-in-emacs-lisp/
 :MINIBUFFER_CREATED_AT: [2023-10-14 Sat]
 :MINIBUFFER_YOUTUBE_LINK: https://www.youtube.com/watch?v=5YYBEGWb5sE
@@ -1418,7 +1418,7 @@ default-directory ;; "/home/tony/minibuffer/"
 
 * How to leverage describe-key command to write Emacs Lisp code?
 :PROPERTIES:
-:ONE: minibuffer-one-episode
+:ONE: mb-one-episode
 :CUSTOM_ID: /2023-10-15-how-to-leverage-describe-key-command-to-write-emacs-lisp-code/
 :MINIBUFFER_CREATED_AT: [2023-10-15 Sun]
 :MINIBUFFER_YOUTUBE_LINK: https://www.youtube.com/watch?v=rzpniEkOELE
@@ -1431,7 +1431,7 @@ default-directory ;; "/home/tony/minibuffer/"
 
 * Do you know about save-match-data macro in Emacs Lisp?
 :PROPERTIES:
-:ONE: minibuffer-one-episode
+:ONE: mb-one-episode
 :CUSTOM_ID: /2023-10-16-do-you-know-about-save-match-data-macro-in-emacs-lisp/
 :MINIBUFFER_CREATED_AT: [2023-10-16 Mon]
 :MINIBUFFER_YOUTUBE_LINK: https://www.youtube.com/watch?v=ajftqkajg6s
