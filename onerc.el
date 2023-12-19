@@ -42,6 +42,9 @@ window.onscroll = toggleElementsOnScroll;
 (setq mb-footer
       '(:div/footer
         (:div
+         "Built with " (:a (@ :href "https://one.tonyaldon.com") "one.el")
+         " (" (:a (@ :href "https://github.com/tonyaldon/minibuffer.tonyaldon.com") "source") ")")
+        (:div
          "Twitter: "(:a (@ :href "https://twitter.com/tonyaldon") "@tonyaldon")
          " | "
          "Email: " (:a (@ :href "mailto:tony@tonyaldon.com") "tony@tonyaldon.com")
