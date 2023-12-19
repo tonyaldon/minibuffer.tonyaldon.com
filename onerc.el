@@ -50,7 +50,7 @@ window.onscroll = toggleElementsOnScroll;
         (:div "© 2023 Tony Aldon.  All rights reserved.")))
 
 (defun minibuffer-item (page &optional is-episode-p)
-  "FIXME"
+  "Episode item to be listed either in the home page or in a sidebare."
   (let* ((path (plist-get page :one-path))
          (title (plist-get page :one-title))
          (date (minibuffer-date path)))
@@ -106,7 +106,7 @@ See https://www.reddit.com/r/emacs/comments/16cl3mk/shuffling_vectors_in_emacs_l
         (:script ,minibuffer-js-onscroll))))))
 
 (defun minibuffer-one-episode (page-tree pages global)
-  "FIXME"
+  "Render function of the episode pages."
   (let* ((title (org-element-property :raw-value page-tree))
          (path (org-element-property :CUSTOM_ID page-tree))
          (date (minibuffer-date path))
